@@ -295,7 +295,6 @@ export const siteContent = {
         'Hüttenruhe täglich ab 22 Uhr.',
       ],
       quote: '„Nur was man erwandert, hat man gelebt und erlebt.“',
-      disclaimer: 'Druckfehler und Änderungen vorbehalten.',
       primary: 'Zimmer anfragen',
     },
     history: {
@@ -479,7 +478,6 @@ export const siteContent = {
         'Quiet hours start daily at 10 pm.',
       ],
       quote: '“Only what you reach on foot is truly lived and experienced.”',
-      disclaimer: 'Subject to change; errors excepted.',
       primary: 'Request a room',
     },
     history: {
@@ -663,7 +661,6 @@ export const siteContent = {
         'Silenzio notturno ogni giorno dalle 22.',
       ],
       quote: '«Solo ciò che si raggiunge a piedi si vive davvero.»',
-      disclaimer: 'Salvo errori di stampa e modifiche.',
       primary: 'Richiedi una camera',
     },
     history: {
