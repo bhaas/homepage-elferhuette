@@ -299,6 +299,10 @@ h1 {
   padding-top: 132px;
 }
 
+.section--gallery {
+  padding: 84px 0 0;
+}
+
 .section--soft {
   background: var(--cream);
 }
@@ -1399,6 +1403,10 @@ h3 {
   .section,
   .section--intro {
     padding: 75px 0;
+  }
+
+  .section--gallery {
+    padding: 60px 0 0;
   }
 
   .stats {
