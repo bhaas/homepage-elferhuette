@@ -329,7 +329,7 @@ export const siteContent = {
       text:
         'Die Elferhütte liegt oberhalb von Neustift im Stubaital. Ob zu Fuß, mit Unterstützung der Elferbahn oder als Ziel einer längeren Tour: Planen Sie Ihre Route passend zu Wetter, Jahreszeit und persönlicher Kondition.',
       items: [
-        { title: 'Start in Neustift', text: 'Neustift im Stubaital ist der Ausgangspunkt für Ihren Bergtag am Elfer.' },
+        { title: 'In 30 Minuten bei uns', text: 'Von der Bergstation der Elfer Gondelbahn in Neustift erreichen Sie die Elferhütte gemütlich in rund 30 Minuten – ein leichtes Wanderziel für die ganze Familie.' },
         { title: 'Gut vorbereitet losgehen', text: 'Aktuelle Wetter-, Weg- und Bahninformationen bitte vor dem Aufbruch prüfen.' },
         { title: 'Wir helfen gerne', text: 'Bei Fragen zu Ihrem Besuch erreichen Sie uns telefonisch oder per E-Mail.' },
       ],
@@ -512,7 +512,7 @@ export const siteContent = {
       text:
         'Elferhütte sits above Neustift in the Stubai Valley. On foot, with the help of the Elferbahn, or as the destination of a longer tour: plan a route that fits the weather, season and your own fitness.',
       items: [
-        { title: 'Start in Neustift', text: 'Neustift in the Stubai Valley is the starting point for your mountain day on the Elfer.' },
+        { title: 'Just 30 minutes away', text: 'From the top station of the Elfer gondola in Neustift, an easy, leisurely walk of around 30 minutes brings you to Elferhütte – a relaxed hike for the whole family.' },
         { title: 'Set off prepared', text: 'Please check current weather, trail and lift information before you start.' },
         { title: 'We are happy to help', text: 'For questions about your visit, contact us by phone or email.' },
       ],
@@ -695,7 +695,7 @@ export const siteContent = {
       text:
         'L’Elferhütte si trova sopra Neustift nella Valle dello Stubai. A piedi, con l’aiuto della Elferbahn o come meta di un tour più lungo: scegliete un percorso adatto al meteo, alla stagione e alla vostra condizione fisica.',
       items: [
-        { title: 'Partenza da Neustift', text: 'Neustift nella Valle dello Stubai è il punto di partenza per la vostra giornata sull’Elfer.' },
+        { title: 'In 30 minuti da noi', text: 'Dalla stazione a monte della cabinovia Elfer a Neustift si raggiunge l’Elferhütte con una comoda passeggiata di circa 30 minuti – un’escursione facile per tutta la famiglia.' },
         { title: 'Partire preparati', text: 'Controllate meteo, sentieri e informazioni sugli impianti prima della partenza.' },
         { title: 'Siamo felici di aiutarvi', text: 'Per domande sulla visita, contattateci telefonicamente o per e-mail.' },
       ],
