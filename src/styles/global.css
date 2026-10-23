@@ -1165,7 +1165,8 @@ h3 {
   background: rgba(27, 48, 36, 0.2);
 }
 
-.contact__links a {
+.contact__links a,
+.contact__bank {
   display: grid;
   gap: 6px;
   padding: 22px 25px;
@@ -1176,6 +1177,31 @@ h3 {
 .contact__links a:hover,
 .contact__links a:focus-visible {
   background: rgba(255, 255, 255, 0.76);
+}
+
+.contact__bank dl {
+  display: grid;
+  gap: 4px;
+  margin: 4px 0 0;
+}
+
+.contact__bank dl > div {
+  display: flex;
+  gap: 12px;
+}
+
+.contact__bank dt {
+  min-width: 42px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.contact__bank dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  user-select: all;
 }
 
 .contact__links span {

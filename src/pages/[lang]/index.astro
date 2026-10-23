@@ -395,6 +395,14 @@ const alternates = [
             <span>{page.contact.emailText}</span>
             <strong>{contact.emailLabel}</strong>
           </a>
+          <div class="contact__bank" translate="no">
+            <span>{page.contact.bankText}</span>
+            <strong>{contact.bank.name}</strong>
+            <dl>
+              <div><dt>IBAN</dt><dd>{contact.bank.iban}</dd></div>
+              <div><dt>BIC</dt><dd>{contact.bank.bic}</dd></div>
+            </dl>
+          </div>
         </div>
       </div>
     </section>
