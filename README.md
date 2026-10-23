@@ -7,6 +7,7 @@ A modern, multilingual Astro homepage for the Elferhütte in Neustift im Stubait
 - Astro 7
 - Statically generated German, English and Italian pages
 - Local, curated Elferhütte photography in `src/assets/elferhuette`
+- Photo gallery with lightbox; third-party photos (Wikimedia Commons, CC BY / CC BY-SA) are credited via `credit` in `galleryItems` (`src/data/site.ts`)
 
 ## Run locally
 

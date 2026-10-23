@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
-import { contact, images, locales, siteContent, type Locale } from '../../data/site';
+import { contact, galleryItems, images, locales, siteContent, type Locale } from '../../data/site';
 
 export function getStaticPaths() {
   return locales.map((lang) => ({ params: { lang } }));
@@ -15,12 +15,19 @@ if (!page) {
 }
 
 const sectionIds = {
-  de: { experience: 'erleben', moments: 'momente', hospitality: 'einkehren', stay: 'uebernachten', arrival: 'anreise', contact: 'kontakt' },
-  en: { experience: 'experience', moments: 'moments', hospitality: 'hospitality', stay: 'stay', arrival: 'arrival', contact: 'contact' },
-  it: { experience: 'esperienza', moments: 'momenti', hospitality: 'ospitalita', stay: 'pernottamento', arrival: 'arrivo', contact: 'contatto' },
+  de: { experience: 'erleben', gallery: 'galerie', hospitality: 'einkehren', stay: 'uebernachten', arrival: 'anreise', contact: 'kontakt' },
+  en: { experience: 'experience', gallery: 'gallery', hospitality: 'hospitality', stay: 'stay', arrival: 'arrival', contact: 'contact' },
+  it: { experience: 'esperienza', gallery: 'galleria', hospitality: 'ospitalita', stay: 'pernottamento', arrival: 'arrivo', contact: 'contatto' },
 } as const;
 
 const ids = sectionIds[lang];
+const gallery = await Promise.all(
+  galleryItems.map(async (item) => ({
+    ...item,
+    caption: item.caption[lang],
+    full: await getImage({ src: images[item.imageKey], width: 1800, format: 'webp' }),
+  })),
+);
 const languageLabels = { de: 'DE', en: 'EN', it: 'IT' } as const;
 const navLabels = { de: 'Hauptnavigation', en: 'Main navigation', it: 'Navigazione principale' } as const;
 const languageSwitcherLabels = { de: 'Sprachauswahl', en: 'Language switcher', it: 'Selettore lingua' } as const;
@@ -143,31 +150,56 @@ const alternates = [
       </div>
     </section>
 
-    <section class="section" id={ids.moments}>
+    <section class="section" id={ids.gallery}>
       <div class="shell">
         <div class="section-heading">
-          <span class="kicker">{page.moments.label}</span>
-          <h2>{page.moments.title}</h2>
-          <p>{page.moments.text}</p>
-          <p class="moment-quote">{page.moments.quote}</p>
+          <span class="kicker">{page.gallery.label}</span>
+          <h2>{page.gallery.title}</h2>
+          <p>{page.gallery.text}</p>
         </div>
-        <div class="moments-grid">
-          {page.moments.cards.map((card) => (
-            <article class="moment-card">
-              <Image
-                src={images[card.imageKey]}
-                alt={card.imageAlt}
-                widths={[640, 960, 1280]}
-                sizes="(max-width: 900px) 100vw, 33vw"
-              />
-              <div class="moment-card__body">
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
-              </div>
-            </article>
+        <ul class="gallery-grid" data-gallery>
+          {gallery.map((item, index) => (
+            <li class:list={['gallery-item', item.layout && `gallery-item--${item.layout}`]}>
+              <button
+                type="button"
+                class="gallery-item__button"
+                data-gallery-index={index}
+                data-full={item.full.src}
+                data-caption={item.caption}
+                data-credit={item.credit ? `${page.gallery.photo}: ${item.credit.author} · ${item.credit.license}` : ''}
+                data-credit-href={item.credit?.href ?? ''}
+                aria-label={`${page.gallery.open}: ${item.caption}`}
+              >
+                <Image
+                  src={images[item.imageKey]}
+                  alt={item.caption}
+                  widths={item.layout === 'feature' || item.layout === 'wide' ? [640, 960, 1400] : [480, 720, 960]}
+                  sizes={item.layout === 'feature' || item.layout === 'wide' ? '(max-width: 580px) 100vw, 50vw' : '(max-width: 580px) 100vw, (max-width: 900px) 50vw, 25vw'}
+                  loading="lazy"
+                />
+                <span class="gallery-item__caption">{item.caption}</span>
+              </button>
+              {item.credit && (
+                <a class="gallery-item__credit" href={item.credit.href} target="_blank" rel="noopener">
+                  © {item.credit.author} · {item.credit.license}
+                </a>
+              )}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
+      <dialog class="lightbox" data-lightbox aria-label={page.gallery.label}>
+        <button type="button" class="lightbox__close" data-lightbox-close aria-label={page.gallery.close}>×</button>
+        <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label={page.gallery.previous}>‹</button>
+        <figure class="lightbox__figure">
+          <img data-lightbox-image alt="" />
+          <figcaption>
+            <span data-lightbox-caption></span>
+            <a data-lightbox-credit target="_blank" rel="noopener"></a>
+          </figcaption>
+        </figure>
+        <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label={page.gallery.next}>›</button>
+      </dialog>
     </section>
 
     <section class="section" id={ids.hospitality}>
@@ -262,3 +294,44 @@ const alternates = [
     </div>
   </footer>
 </MainLayout>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('[data-lightbox]');
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-gallery-index]'));
+
+  if (dialog && buttons.length) {
+    const image = dialog.querySelector<HTMLImageElement>('[data-lightbox-image]')!;
+    const caption = dialog.querySelector<HTMLElement>('[data-lightbox-caption]')!;
+    const credit = dialog.querySelector<HTMLAnchorElement>('[data-lightbox-credit]')!;
+    let current = 0;
+
+    const show = (index: number) => {
+      current = (index + buttons.length) % buttons.length;
+      const data = buttons[current].dataset;
+      image.src = data.full ?? '';
+      image.alt = data.caption ?? '';
+      caption.textContent = data.caption ?? '';
+      credit.textContent = data.credit ?? '';
+      credit.hidden = !data.credit;
+      if (data.creditHref) credit.href = data.creditHref;
+    };
+
+    buttons.forEach((button, index) =>
+      button.addEventListener('click', () => {
+        show(index);
+        dialog.showModal();
+      }),
+    );
+    dialog.querySelector('[data-lightbox-close]')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('[data-lightbox-prev]')?.addEventListener('click', () => show(current - 1));
+    dialog.querySelector('[data-lightbox-next]')?.addEventListener('click', () => show(current + 1));
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') show(current - 1);
+      if (event.key === 'ArrowRight') show(current + 1);
+    });
+    dialog.addEventListener('close', () => buttons[current]?.focus());
+  }
+</script>

@@ -1,4 +1,16 @@
 import doubleRainbow from '../assets/elferhuette/double-rainbow.jpg';
+import galleryHutElferPeaks from '../assets/elferhuette/gallery-hut-elfer-peaks.jpg';
+import gallerySummerHut from '../assets/elferhuette/gallery-summer-hut.jpg';
+import gallery1965 from '../assets/elferhuette/gallery-1965.jpg';
+import galleryAerial from '../assets/elferhuette/gallery-aerial.jpg';
+import galleryAutumnClouds from '../assets/elferhuette/gallery-autumn-clouds.jpg';
+import galleryWinterMoon from '../assets/elferhuette/gallery-winter-moon.jpg';
+import gallerySnowyPeaks from '../assets/elferhuette/gallery-snowy-peaks.jpg';
+import galleryFlowerHut from '../assets/elferhuette/gallery-flower-hut.jpg';
+import gallerySkiSlope from '../assets/elferhuette/gallery-ski-slope.jpg';
+import galleryHayBarn from '../assets/elferhuette/gallery-hay-barn.jpg';
+import galleryMilkCans from '../assets/elferhuette/gallery-milk-cans.jpg';
+import galleryNightLights from '../assets/elferhuette/gallery-night-lights.jpg';
 import gentians from '../assets/elferhuette/gentians.jpg';
 import heroClouds from '../assets/elferhuette/hero-clouds.jpg';
 import hutStube from '../assets/elferhuette/hut-stube.jpg';
@@ -25,9 +37,114 @@ export const images = {
   gentians,
   originalSummerValley,
   originalSummerWide,
+  galleryHutElferPeaks,
+  gallerySummerHut,
+  gallery1965,
+  galleryAerial,
+  galleryAutumnClouds,
+  galleryWinterMoon,
+  gallerySnowyPeaks,
+  galleryFlowerHut,
+  gallerySkiSlope,
+  galleryHayBarn,
+  galleryMilkCans,
+  galleryNightLights,
 } as const;
 
 export type ImageKey = keyof typeof images;
+
+export type GalleryLayout = '' | 'wide' | 'tall' | 'feature';
+
+export const galleryItems: {
+  imageKey: ImageKey;
+  layout: GalleryLayout;
+  caption: Record<Locale, string>;
+  credit?: { author: string; license: string; href: string };
+}[] = [
+  {
+    imageKey: 'galleryHutElferPeaks',
+    layout: 'feature',
+    caption: { de: 'Die Elferhütte vor den Zacken des Elfers', en: 'Elferhütte beneath the jagged Elfer peaks', it: 'L’Elferhütte sotto le guglie dell’Elfer' },
+    credit: { author: 'FkMohr', license: 'CC BY-SA 3.0 DE', href: 'https://commons.wikimedia.org/wiki/File:ElferH-SW.jpg' },
+  },
+  {
+    imageKey: 'galleryAerial',
+    layout: 'tall',
+    caption: { de: 'Die Hütte aus der Vogelperspektive', en: 'The hut from above', it: 'Il rifugio dall’alto' },
+  },
+  {
+    imageKey: 'doubleRainbow',
+    layout: '',
+    caption: { de: 'Doppelter Regenbogen über Neustift', en: 'Double rainbow over Neustift', it: 'Doppio arcobaleno su Neustift' },
+  },
+  {
+    imageKey: 'galleryAutumnClouds',
+    layout: '',
+    caption: { de: 'Herbstmorgen über dem Nebelmeer', en: 'Autumn morning above the fog', it: 'Mattino d’autunno sopra la nebbia' },
+  },
+  {
+    imageKey: 'strawberryCake',
+    layout: '',
+    caption: { de: 'Erdbeertorte mit Talblick', en: 'Strawberry cake with a valley view', it: 'Torta di fragole con vista sulla valle' },
+  },
+  {
+    imageKey: 'galleryWinterMoon',
+    layout: 'wide',
+    caption: { de: 'Mondaufgang über der verschneiten Hütte', en: 'Moonrise above the snowy hut', it: 'Luna sopra il rifugio innevato' },
+  },
+  {
+    imageKey: 'gentians',
+    layout: '',
+    caption: { de: 'Enzian am Wegesrand', en: 'Gentians along the trail', it: 'Genziane lungo il sentiero' },
+  },
+  {
+    imageKey: 'gallerySnowyPeaks',
+    layout: '',
+    caption: { de: 'Verschneite Gipfel im Frühjahr', en: 'Snow-capped peaks in spring', it: 'Cime innevate in primavera' },
+  },
+  {
+    imageKey: 'galleryFlowerHut',
+    layout: 'tall',
+    caption: { de: 'Blumenschmuck vor der Hütte', en: 'Flowers in front of the hut', it: 'Fiori davanti al rifugio' },
+  },
+  {
+    imageKey: 'gallerySkiSlope',
+    layout: '',
+    caption: { de: 'Frisch präparierte Piste am Elfer', en: 'Freshly groomed slope on the Elfer', it: 'Pista appena battuta sull’Elfer' },
+  },
+  {
+    imageKey: 'gallerySummerHut',
+    layout: 'wide',
+    caption: { de: 'Sommertag hoch über dem Stubaital', en: 'Summer day high above the Stubai Valley', it: 'Giornata estiva sopra la Valle dello Stubai' },
+    credit: { author: 'SchiDD', license: 'CC BY-SA 4.0', href: 'https://commons.wikimedia.org/wiki/File:Stubai-Elferh%C3%BCtte-4.jpg' },
+  },
+  {
+    imageKey: 'galleryMilkCans',
+    layout: '',
+    caption: { de: 'Milchkannen und Rodel auf der Terrasse', en: 'Milk churns and sledge on the terrace', it: 'Bidoni del latte e slittino sulla terrazza' },
+  },
+  {
+    imageKey: 'galleryHayBarn',
+    layout: '',
+    caption: { de: 'Heustadel im Pulverschnee', en: 'Hay barn in powder snow', it: 'Fienile nella neve fresca' },
+  },
+  {
+    imageKey: 'originalSummerValley',
+    layout: '',
+    caption: { de: 'Weiter Blick ins Stubaital', en: 'Wide view into the Stubai Valley', it: 'Ampia vista sulla Valle dello Stubai' },
+  },
+  {
+    imageKey: 'galleryNightLights',
+    layout: '',
+    caption: { de: 'Lichter im Tal zur blauen Stunde', en: 'Valley lights at blue hour', it: 'Luci della valle all’ora blu' },
+  },
+  {
+    imageKey: 'gallery1965',
+    layout: 'wide',
+    caption: { de: 'Die Elferhütte im Winter 1965', en: 'Elferhütte in winter 1965', it: 'L’Elferhütte nell’inverno 1965' },
+    credit: { author: 'Sammlung Risch-Lau, Vorarlberger Landesbibliothek', license: 'CC BY 4.0', href: 'https://commons.wikimedia.org/wiki/File:Elferh%C3%BCtte_1965.jpg' },
+  },
+];
 
 const contact = {
   phoneHref: 'tel:+4352262818',
@@ -46,7 +163,7 @@ export const siteContent = {
     },
     nav: [
       { href: '#erleben', label: 'Erleben' },
-      { href: '#momente', label: 'Momente' },
+      { href: '#galerie', label: 'Galerie' },
       { href: '#einkehren', label: 'Einkehren' },
       { href: '#uebernachten', label: 'Übernachten' },
       { href: '#anreise', label: 'Anreise' },
@@ -101,38 +218,15 @@ export const siteContent = {
         },
       ],
     },
-    moments: {
-      label: 'Aus der ursprünglichen Homepage',
-      title: 'Bewährte Elferhütten-Momente in neuem Auftritt.',
-      text:
-        'Schon der ursprüngliche Webauftritt stellte Wandern, Gesundheit und Fitness in den Mittelpunkt. Viele Stammgäste schätzen bis heute die Kombination aus Panorama, ehrlicher Küche und echter Tiroler Gastfreundschaft.',
-      quote: '„Ihre Gesundheit und Fitness beeinflusst jeden Aspekt Ihres Lebens.“',
-      cards: [
-        {
-          title: 'Sommerblick über das Stubaital',
-          text: 'Der Klassiker vom Hüttenplatz - viel Weite, viel Licht und ein Ziel, das man sieht.',
-          imageKey: 'originalSummerValley' as ImageKey,
-          imageAlt: 'Elferhütte mit Blick über das sommerliche Stubaital',
-        },
-        {
-          title: 'Kuchen mit Aussicht',
-          text: 'Hausgemachte Erdbeertorte auf der Terrasse - und tief unten liegt das Stubaital.',
-          imageKey: 'strawberryCake' as ImageKey,
-          imageAlt: 'Erdbeertorte auf der Hüttenterrasse mit Blick ins Stubaital',
-        },
-        {
-          title: 'Regenbogen über Neustift',
-          text: 'Nach dem Gewitter klart es auf: Von der Hütte aus spannt sich ein doppelter Regenbogen über das Tal.',
-          imageKey: 'doubleRainbow' as ImageKey,
-          imageAlt: 'Doppelter Regenbogen über Neustift im Stubaital',
-        },
-        {
-          title: 'Bergblumenzeit',
-          text: 'Im Frühsommer leuchten Enzian, Almrosen und Edelweiß entlang der Wege rund um den Elfer.',
-          imageKey: 'gentians' as ImageKey,
-          imageAlt: 'Blühender Enzian zwischen Kalksteinen am Elfer',
-        },
-      ],
+    gallery: {
+      label: 'Galerie',
+      title: 'Bilder vom Elfer.',
+      text: 'Sommer und Winter, Morgenlicht und Sternennacht: ein paar Eindrücke von der Elferhütte und ihrer Umgebung. Zum Vergrößern einfach antippen.',
+      open: 'Foto vergrößern',
+      close: 'Schließen',
+      previous: 'Vorheriges Foto',
+      next: 'Nächstes Foto',
+      photo: 'Foto',
     },
     hospitality: {
       label: 'Einkehren',
@@ -183,7 +277,7 @@ export const siteContent = {
     },
     nav: [
       { href: '#experience', label: 'Experience' },
-      { href: '#moments', label: 'Moments' },
+      { href: '#gallery', label: 'Gallery' },
       { href: '#hospitality', label: 'Hospitality' },
       { href: '#stay', label: 'Stay overnight' },
       { href: '#arrival', label: 'Getting here' },
@@ -238,38 +332,15 @@ export const siteContent = {
         },
       ],
     },
-    moments: {
-      label: 'From the original homepage',
-      title: 'Classic Elferhütte moments, now in a new design.',
-      text:
-        'The original website already focused on hiking, health and fitness. That spirit remains: mountain movement, wide views, heartfelt hospitality and solid quality that returning guests appreciate.',
-      quote: '“Your health and fitness influence every aspect of your life.”',
-      cards: [
-        {
-          title: 'Summer above the valley',
-          text: 'A classic hut perspective over Neustift and the Stubai Valley.',
-          imageKey: 'originalSummerValley' as ImageKey,
-          imageAlt: 'Elferhütte overlooking the Stubai Valley in summer',
-        },
-        {
-          title: 'Cake with a view',
-          text: 'Homemade strawberry cake on the terrace - with the Stubai Valley far below.',
-          imageKey: 'strawberryCake' as ImageKey,
-          imageAlt: 'Strawberry cake on the hut terrace overlooking the Stubai Valley',
-        },
-        {
-          title: 'Rainbow over Neustift',
-          text: 'When a storm passes, a double rainbow sometimes arches over the valley right below the hut.',
-          imageKey: 'doubleRainbow' as ImageKey,
-          imageAlt: 'Double rainbow over Neustift in the Stubai Valley',
-        },
-        {
-          title: 'Alpine flower season',
-          text: 'In early summer, gentians, alpine roses and edelweiss brighten the trails around the Elfer.',
-          imageKey: 'gentians' as ImageKey,
-          imageAlt: 'Gentians in bloom among limestone rocks on the Elfer',
-        },
-      ],
+    gallery: {
+      label: 'Gallery',
+      title: 'Pictures from the Elfer.',
+      text: 'Summer and winter, morning light and starry nights: a few impressions of Elferhütte and its surroundings. Tap any photo to enlarge it.',
+      open: 'Enlarge photo',
+      close: 'Close',
+      previous: 'Previous photo',
+      next: 'Next photo',
+      photo: 'Photo',
     },
     hospitality: {
       label: 'Hospitality',
@@ -320,7 +391,7 @@ export const siteContent = {
     },
     nav: [
       { href: '#esperienza', label: 'Esperienza' },
-      { href: '#momenti', label: 'Momenti' },
+      { href: '#galleria', label: 'Galleria' },
       { href: '#ospitalita', label: 'Ospitalità' },
       { href: '#pernottamento', label: 'Pernottamento' },
       { href: '#arrivo', label: 'Come arrivare' },
@@ -375,38 +446,15 @@ export const siteContent = {
         },
       ],
     },
-    moments: {
-      label: 'Dalla homepage originale',
-      title: 'Momenti storici dell’Elferhütte, in una veste nuova.',
-      text:
-        'Già il sito originale metteva al centro escursioni, salute e forma fisica. Questo spirito resta: movimento in montagna, grande panorama, cucina sincera e qualità apprezzata da tanti ospiti abituali.',
-      quote: '«La vostra salute e la vostra forma fisica influenzano ogni aspetto della vita.»',
-      cards: [
-        {
-          title: 'Estate sopra la valle',
-          text: 'Una vista classica sullo Stubaital dal pianoro del rifugio.',
-          imageKey: 'originalSummerValley' as ImageKey,
-          imageAlt: 'Elferhütte con vista estiva sulla Valle dello Stubai',
-        },
-        {
-          title: 'Torta con vista',
-          text: 'Torta di fragole fatta in casa sulla terrazza, con la Valle dello Stubai ai vostri piedi.',
-          imageKey: 'strawberryCake' as ImageKey,
-          imageAlt: 'Torta di fragole sulla terrazza del rifugio con vista sulla Valle dello Stubai',
-        },
-        {
-          title: 'Arcobaleno su Neustift',
-          text: 'Dopo il temporale, a volte un doppio arcobaleno si apre sulla valle proprio sotto il rifugio.',
-          imageKey: 'doubleRainbow' as ImageKey,
-          imageAlt: 'Doppio arcobaleno su Neustift nella Valle dello Stubai',
-        },
-        {
-          title: 'Fiori di montagna',
-          text: 'A inizio estate genziane, rododendri e stelle alpine colorano i sentieri intorno all’Elfer.',
-          imageKey: 'gentians' as ImageKey,
-          imageAlt: 'Genziane in fiore tra le rocce calcaree dell’Elfer',
-        },
-      ],
+    gallery: {
+      label: 'Galleria',
+      title: 'Immagini dall’Elfer.',
+      text: 'Estate e inverno, luce del mattino e notti stellate: alcune impressioni dell’Elferhütte e dei suoi dintorni. Toccate una foto per ingrandirla.',
+      open: 'Ingrandisci foto',
+      close: 'Chiudi',
+      previous: 'Foto precedente',
+      next: 'Foto successiva',
+      photo: 'Foto',
     },
     hospitality: {
       label: 'Ospitalità',
