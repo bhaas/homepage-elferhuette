@@ -54,7 +54,7 @@ const alternates = [
   <a class="skip-link" href="#main-content">{skipLabels[lang]}</a>
   <header class="site-header">
     <div class="shell header__inner">
-      <a class="wordmark" href={`/${lang}/`} aria-label="Elferhütte">
+      <a class="wordmark notranslate" translate="no" href={`/${lang}/`} aria-label="Elferhütte">
         <span class="wordmark__name">Elferhütte</span>
         <span class="wordmark__place">2.080 m · Stubaital</span>
       </a>
@@ -63,7 +63,7 @@ const alternates = [
         {page.nav.map((item) => <a href={item.href}>{item.label}</a>)}
       </nav>
 
-      <div class="language-switcher" aria-label={languageSwitcherLabels[lang]}>
+      <div class="language-switcher notranslate" translate="no" aria-label={languageSwitcherLabels[lang]}>
         {locales.map((item) => (
           <a href={`/${item}/`} lang={item} hreflang={item} aria-current={item === lang ? 'page' : undefined}>
             {languageLabels[item]}
