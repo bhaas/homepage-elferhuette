@@ -360,6 +360,22 @@ const alternates = [
             </article>
           ))}
         </div>
+        <div class="map-block">
+          <div class="map-info">
+            <h3>{page.arrival.mapTitle}</h3>
+            <span class="map-info__label">{page.arrival.addressLabel}</span>
+            <address>
+              {contact.addressLines.map((line) => <span>{line}</span>)}
+            </address>
+            <a class="button button--dark" href={contact.mapsHref} target="_blank" rel="noopener">{page.arrival.mapOpen} ↗</a>
+          </div>
+          <div class="map-frame" data-map data-src={contact.mapsEmbedSrc.replace('__LANG__', lang)} data-title={page.arrival.mapFrameTitle}>
+            <div class="map-consent">
+              <p>{page.arrival.mapNotice}</p>
+              <button type="button" class="button button--dark" data-map-load>{page.arrival.mapLoad}</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -394,6 +410,17 @@ const alternates = [
 </MainLayout>
 
 <script>
+  const mapFrame = document.querySelector<HTMLElement>('[data-map]');
+  mapFrame?.querySelector('[data-map-load]')?.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = mapFrame.dataset.src ?? '';
+    iframe.title = mapFrame.dataset.title ?? '';
+    iframe.loading = 'lazy';
+    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    iframe.allowFullscreen = true;
+    mapFrame.replaceChildren(iframe);
+  });
+
   const dialog = document.querySelector<HTMLDialogElement>('[data-lightbox]');
   const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-gallery-index]'));
 

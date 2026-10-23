@@ -161,6 +161,9 @@ const contact = {
   phoneLabel: '+43 5226 2818',
   emailHref: 'mailto:haas@elferhuette.at',
   emailLabel: 'haas@elferhuette.at',
+  addressLines: ['Elferhütte Restaurant', 'Elferhütte 294', '6167 Neustift im Stubaital', 'Österreich'],
+  mapsHref: 'https://www.google.com/maps/search/?api=1&query=Elferh%C3%BCtte%20Restaurant%2C%20Elferh%C3%BCtte%20294%2C%206167%20Neustift%20im%20Stubaital',
+  mapsEmbedSrc: 'https://www.google.com/maps?q=Elferh%C3%BCtte%20Restaurant%2C%20Elferh%C3%BCtte%20294%2C%206167%20Neustift%20im%20Stubaital&hl=__LANG__&z=14&output=embed',
 };
 
 export const siteContent = {
@@ -329,6 +332,12 @@ export const siteContent = {
         { title: 'Gut vorbereitet losgehen', text: 'Aktuelle Wetter-, Weg- und Bahninformationen bitte vor dem Aufbruch prüfen.' },
         { title: 'Wir helfen gerne', text: 'Bei Fragen zu Ihrem Besuch erreichen Sie uns telefonisch oder per E-Mail.' },
       ],
+      mapTitle: "So finden Sie uns",
+      addressLabel: "Adresse",
+      mapNotice: "Mit dem Laden der Karte werden Daten an Google übertragen. Mehr dazu in der Datenschutzerklärung von Google.",
+      mapLoad: "Karte laden",
+      mapOpen: "In Google Maps öffnen",
+      mapFrameTitle: "Karte: Lage der Elferhütte",
     },
     contact: {
       label: 'Kontakt',
@@ -505,6 +514,12 @@ export const siteContent = {
         { title: 'Set off prepared', text: 'Please check current weather, trail and lift information before you start.' },
         { title: 'We are happy to help', text: 'For questions about your visit, contact us by phone or email.' },
       ],
+      mapTitle: "How to find us",
+      addressLabel: "Address",
+      mapNotice: "Loading the map transfers data to Google. See Google’s privacy policy for details.",
+      mapLoad: "Load map",
+      mapOpen: "Open in Google Maps",
+      mapFrameTitle: "Map: location of Elferhütte",
     },
     contact: {
       label: 'Contact',
@@ -681,6 +696,12 @@ export const siteContent = {
         { title: 'Partire preparati', text: 'Controllate meteo, sentieri e informazioni sugli impianti prima della partenza.' },
         { title: 'Siamo felici di aiutarvi', text: 'Per domande sulla visita, contattateci telefonicamente o per e-mail.' },
       ],
+      mapTitle: "Come trovarci",
+      addressLabel: "Indirizzo",
+      mapNotice: "Caricando la mappa i dati vengono trasmessi a Google. Maggiori informazioni nell’informativa sulla privacy di Google.",
+      mapLoad: "Carica mappa",
+      mapOpen: "Apri in Google Maps",
+      mapFrameTitle: "Mappa: posizione dell’Elferhütte",
     },
     contact: {
       label: 'Contatto',
