@@ -176,6 +176,7 @@ const alternates = [
                   widths={item.layout === 'feature' || item.layout === 'wide' ? [640, 960, 1400] : [480, 720, 960]}
                   sizes={item.layout === 'feature' || item.layout === 'wide' ? '(max-width: 580px) 100vw, 50vw' : '(max-width: 580px) 100vw, (max-width: 900px) 50vw, 25vw'}
                   loading="lazy"
+                  style={item.position ? `object-position: ${item.position}` : undefined}
                 />
                 <span class="gallery-item__caption">{item.caption}</span>
               </button>

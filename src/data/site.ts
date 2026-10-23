@@ -58,6 +58,7 @@ export type GalleryLayout = '' | 'wide' | 'tall' | 'feature';
 export const galleryItems: {
   imageKey: ImageKey;
   layout: GalleryLayout;
+  position?: string;
   caption: Record<Locale, string>;
   credit?: { author: string; license: string; href: string };
 }[] = [
@@ -89,7 +90,7 @@ export const galleryItems: {
   },
   {
     imageKey: 'galleryWinterMoon',
-    layout: 'wide',
+    layout: '',
     caption: { de: 'Mondaufgang über der verschneiten Hütte', en: 'Moonrise above the snowy hut', it: 'Luna sopra il rifugio innevato' },
   },
   {
@@ -99,8 +100,9 @@ export const galleryItems: {
   },
   {
     imageKey: 'gallerySnowyPeaks',
-    layout: '',
-    caption: { de: 'Verschneite Gipfel im Frühjahr', en: 'Snow-capped peaks in spring', it: 'Cime innevate in primavera' },
+    layout: 'wide',
+    position: 'center 92%',
+    caption: { de: 'Die Elferhütte zu Füßen verschneiter Gipfel im Frühjahr', en: 'Elferhütte at the foot of snowy peaks in spring', it: 'L’Elferhütte ai piedi di cime innevate in primavera' },
   },
   {
     imageKey: 'galleryFlowerHut',
