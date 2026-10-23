@@ -1191,7 +1191,7 @@ h3 {
 }
 
 .contact__bank dt {
-  min-width: 42px;
+  min-width: 58px;
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 700;
