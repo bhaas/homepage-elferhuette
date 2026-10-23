@@ -413,6 +413,12 @@ h1 {
   gap: 20px;
 }
 
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 .experience-card {
   background: var(--paper);
 }
@@ -421,6 +427,30 @@ h1 {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.moment-card {
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.moment-card > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.moment-card__body {
+  padding: 24px;
+}
+
+.moment-quote {
+  margin-top: 18px !important;
+  padding-left: 15px;
+  border-left: 3px solid var(--forest);
+  color: var(--forest) !important;
+  font-size: 1.04rem !important;
+  font-style: italic;
 }
 
 .experience-card__body {
@@ -637,6 +667,7 @@ h3 {
   }
 
   .experience-grid,
+  .moments-grid,
   .arrival-grid {
     grid-template-columns: 1fr;
   }

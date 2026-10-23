@@ -1,6 +1,12 @@
 import alpineRidge from '../assets/elferhuette/alpine-ridge.jpg';
 import heroClouds from '../assets/elferhuette/hero-clouds.jpg';
 import hutSpring from '../assets/elferhuette/hut-spring.jpg';
+import originalEveningLight from '../assets/elferhuette/original-evening-light.jpg';
+import originalSummerValley from '../assets/elferhuette/original-summer-valley.jpg';
+import originalSummerWide from '../assets/elferhuette/original-summer-wide.jpg';
+import originalValleyPanorama from '../assets/elferhuette/original-valley-panorama.jpg';
+import originalVintageTalblick from '../assets/elferhuette/original-vintage-talblick.jpg';
+import originalWinterWide from '../assets/elferhuette/original-winter-wide.jpg';
 import sleepingRoom from '../assets/elferhuette/sleeping-room.jpg';
 import summerRidge from '../assets/elferhuette/summer-ridge.jpg';
 import winterHut from '../assets/elferhuette/winter-hut.jpg';
@@ -15,6 +21,12 @@ export const images = {
   alpineRidge,
   sleepingRoom,
   hutSpring,
+  originalEveningLight,
+  originalSummerValley,
+  originalSummerWide,
+  originalValleyPanorama,
+  originalVintageTalblick,
+  originalWinterWide,
 } as const;
 
 export type ImageKey = keyof typeof images;
@@ -36,6 +48,7 @@ export const siteContent = {
     },
     nav: [
       { href: '#erleben', label: 'Erleben' },
+      { href: '#momente', label: 'Momente' },
       { href: '#einkehren', label: 'Einkehren' },
       { href: '#uebernachten', label: 'Übernachten' },
       { href: '#anreise', label: 'Anreise' },
@@ -90,14 +103,54 @@ export const siteContent = {
         },
       ],
     },
+    moments: {
+      label: 'Aus der ursprünglichen Homepage',
+      title: 'Bewährte Elferhütten-Momente in neuem Auftritt.',
+      text:
+        'Schon der ursprüngliche Webauftritt stellte Wandern, Gesundheit und Fitness in den Mittelpunkt. Viele Stammgäste schätzen bis heute die Kombination aus Panorama, ehrlicher Küche und echter Tiroler Gastfreundschaft.',
+      quote: '„Ihre Gesundheit und Fitness beeinflusst jeden Aspekt Ihres Lebens.“',
+      cards: [
+        {
+          title: 'Sommerblick über das Stubaital',
+          text: 'Der Klassiker vom Hüttenplatz - viel Weite, viel Licht und ein Ziel, das man sieht.',
+          imageKey: 'originalSummerValley' as ImageKey,
+          imageAlt: 'Elferhütte mit Blick über das sommerliche Stubaital',
+        },
+        {
+          title: 'Winterpanorama am Elfer',
+          text: 'Die Hütte über den Wolken und darunter das Tal: ein Motiv, das seit Jahren für Elferhütte steht.',
+          imageKey: 'originalWinterWide' as ImageKey,
+          imageAlt: 'Breites Winterpanorama mit Elferhütte und verschneiten Bergen',
+        },
+        {
+          title: 'Abendstimmung an der Hütte',
+          text: 'Wenn am Berg langsam Ruhe einkehrt, zeigt die Elferhütte ihren besonders stimmungsvollen Charakter.',
+          imageKey: 'originalEveningLight' as ImageKey,
+          imageAlt: 'Elferhütte in blauer Abendstimmung',
+        },
+        {
+          title: 'Panorama aus dem Sommer 2019',
+          text: 'Der breite Blick über die Bergkämme zeigt die Elferhütte als Ausgangspunkt und Aussichtsbalkon zugleich.',
+          imageKey: 'originalValleyPanorama' as ImageKey,
+          imageAlt: 'Breites Sommerpanorama mit Elferhütte und Stubaital',
+        },
+        {
+          title: 'Klassischer Talblick',
+          text: 'Ein Motiv aus dem früheren Auftritt: die Hütte direkt über Neustift mit weitem Blick ins Tal.',
+          imageKey: 'originalVintageTalblick' as ImageKey,
+          imageAlt: 'Historischer Talblick mit Elferhütte',
+        },
+      ],
+    },
     hospitality: {
       label: 'Einkehren',
       title: 'Gut ankommen. Gut essen. Gut bleiben.',
       text:
-        'Nach Stunden in der Bergwelt darf es einfach und gut sein. In der Elferhütte treffen herzliche Atmosphäre, ehrliche Küche und die besondere Ruhe des Berges aufeinander.',
+        'Nach Stunden in der Bergwelt darf es einfach und gut sein. In der Elferhütte treffen herzliche Atmosphäre, ehrliche Küche und Produkte in verlässlicher Qualität aufeinander - genau das wissen viele Stammgäste besonders zu schätzen.',
       points: ['Für die Pause zwischendurch', 'Für den Austausch nach der Tour', 'Für Genuss mit großem Ausblick'],
       note: 'Für aktuelle Öffnungszeiten, Angebote und Gruppenanfragen freuen wir uns über Ihre Nachricht.',
-      imageAlt: 'Historische Ansicht der Elferhütte am Berg',
+      imageKey: 'originalSummerWide' as ImageKey,
+      imageAlt: 'Elferhütte an einem klaren Sommertag',
     },
     stay: {
       label: 'Übernachten',
@@ -138,6 +191,7 @@ export const siteContent = {
     },
     nav: [
       { href: '#experience', label: 'Experience' },
+      { href: '#moments', label: 'Moments' },
       { href: '#hospitality', label: 'Hospitality' },
       { href: '#stay', label: 'Stay overnight' },
       { href: '#arrival', label: 'Getting here' },
@@ -192,14 +246,54 @@ export const siteContent = {
         },
       ],
     },
+    moments: {
+      label: 'From the original homepage',
+      title: 'Classic Elferhütte moments, now in a new design.',
+      text:
+        'The original website already focused on hiking, health and fitness. That spirit remains: mountain movement, wide views, heartfelt hospitality and solid quality that returning guests appreciate.',
+      quote: '“Your health and fitness influence every aspect of your life.”',
+      cards: [
+        {
+          title: 'Summer above the valley',
+          text: 'A classic hut perspective over Neustift and the Stubai Valley.',
+          imageKey: 'originalSummerValley' as ImageKey,
+          imageAlt: 'Elferhütte overlooking the Stubai Valley in summer',
+        },
+        {
+          title: 'Winter panorama on the Elfer',
+          text: 'The hut above cloud layers with the snowy mountain chain behind it.',
+          imageKey: 'originalWinterWide' as ImageKey,
+          imageAlt: 'Wide winter panorama with Elferhütte and snowy peaks',
+        },
+        {
+          title: 'Evening atmosphere',
+          text: 'At dusk, Elferhütte shows the calm mountain character many guests remember.',
+          imageKey: 'originalEveningLight' as ImageKey,
+          imageAlt: 'Elferhütte glowing in blue evening light',
+        },
+        {
+          title: 'Summer panorama 2019',
+          text: 'A wide mountain sweep that shows the hut as both destination and viewpoint.',
+          imageKey: 'originalValleyPanorama' as ImageKey,
+          imageAlt: 'Wide summer panorama with Elferhütte and the Stubai Valley',
+        },
+        {
+          title: 'Classic valley view',
+          text: 'A signature image from the earlier website with the hut above Neustift.',
+          imageKey: 'originalVintageTalblick' as ImageKey,
+          imageAlt: 'Historic valley view featuring Elferhütte',
+        },
+      ],
+    },
     hospitality: {
       label: 'Hospitality',
       title: 'Arrive well. Eat well. Stay awhile.',
       text:
-        'After hours in the mountains, simple things done well matter most. At Elferhütte, a warm welcome, honest cooking and the mountain’s special calm come together.',
+        'After hours in the mountains, simple things done well matter most. At Elferhütte, a warm welcome, honest cooking and dependable product quality come together - one reason many guests return year after year.',
       points: ['For a pause along the way', 'For stories after the tour', 'For good food with a grand view'],
       note: 'For current opening hours, offers and group enquiries, please get in touch with us.',
-      imageAlt: 'Historic view of Elferhütte on the mountain',
+      imageKey: 'originalSummerWide' as ImageKey,
+      imageAlt: 'Elferhütte on a clear summer day',
     },
     stay: {
       label: 'Stay overnight',
@@ -240,6 +334,7 @@ export const siteContent = {
     },
     nav: [
       { href: '#esperienza', label: 'Esperienza' },
+      { href: '#momenti', label: 'Momenti' },
       { href: '#ospitalita', label: 'Ospitalità' },
       { href: '#pernottamento', label: 'Pernottamento' },
       { href: '#arrivo', label: 'Come arrivare' },
@@ -294,14 +389,54 @@ export const siteContent = {
         },
       ],
     },
+    moments: {
+      label: 'Dalla homepage originale',
+      title: 'Momenti storici dell’Elferhütte, in una veste nuova.',
+      text:
+        'Già il sito originale metteva al centro escursioni, salute e forma fisica. Questo spirito resta: movimento in montagna, grande panorama, cucina sincera e qualità apprezzata da tanti ospiti abituali.',
+      quote: '«La vostra salute e la vostra forma fisica influenzano ogni aspetto della vita.»',
+      cards: [
+        {
+          title: 'Estate sopra la valle',
+          text: 'Una vista classica sullo Stubaital dal pianoro del rifugio.',
+          imageKey: 'originalSummerValley' as ImageKey,
+          imageAlt: 'Elferhütte con vista estiva sulla Valle dello Stubai',
+        },
+        {
+          title: 'Panorama invernale sull’Elfer',
+          text: 'Il rifugio sopra le nuvole con la catena innevata sullo sfondo.',
+          imageKey: 'originalWinterWide' as ImageKey,
+          imageAlt: 'Ampio panorama invernale con Elferhütte e montagne innevate',
+        },
+        {
+          title: 'Atmosfera serale',
+          text: 'Al calare della sera, l’Elferhütte mostra il suo lato più tranquillo e suggestivo.',
+          imageKey: 'originalEveningLight' as ImageKey,
+          imageAlt: 'Elferhütte illuminata nella luce blu della sera',
+        },
+        {
+          title: 'Panorama estivo 2019',
+          text: 'Una veduta ampia che mostra il rifugio come meta e punto panoramico allo stesso tempo.',
+          imageKey: 'originalValleyPanorama' as ImageKey,
+          imageAlt: 'Ampio panorama estivo con Elferhütte e Valle dello Stubai',
+        },
+        {
+          title: 'Vista classica sulla valle',
+          text: 'Un’immagine simbolo del vecchio sito: il rifugio sopra Neustift con grande profondità di paesaggio.',
+          imageKey: 'originalVintageTalblick' as ImageKey,
+          imageAlt: 'Vista storica sulla valle con Elferhütte',
+        },
+      ],
+    },
     hospitality: {
       label: 'Ospitalità',
       title: 'Arrivare bene. Mangiare bene. Restare volentieri.',
       text:
-        'Dopo ore in montagna, contano le cose semplici fatte bene. All’Elferhütte si incontrano un’accoglienza calorosa, cucina genuina e la speciale quiete della montagna.',
+        'Dopo ore in montagna, contano le cose semplici fatte bene. All’Elferhütte si incontrano accoglienza calorosa, cucina genuina e qualità costante dei prodotti - proprio ciò che tanti ospiti abituali apprezzano da anni.',
       points: ['Per una pausa lungo il cammino', 'Per raccontarsi dopo l’escursione', 'Per il gusto con vista grandiosa'],
       note: 'Per gli orari di apertura aggiornati, le offerte e le richieste per gruppi, contattateci direttamente.',
-      imageAlt: 'Veduta storica dell’Elferhütte in montagna',
+      imageKey: 'originalSummerWide' as ImageKey,
+      imageAlt: 'Elferhütte in una limpida giornata estiva',
     },
     stay: {
       label: 'Pernottamento',

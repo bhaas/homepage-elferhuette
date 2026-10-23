@@ -15,9 +15,9 @@ if (!page) {
 }
 
 const sectionIds = {
-  de: { experience: 'erleben', hospitality: 'einkehren', stay: 'uebernachten', arrival: 'anreise', contact: 'kontakt' },
-  en: { experience: 'experience', hospitality: 'hospitality', stay: 'stay', arrival: 'arrival', contact: 'contact' },
-  it: { experience: 'esperienza', hospitality: 'ospitalita', stay: 'pernottamento', arrival: 'arrivo', contact: 'contatto' },
+  de: { experience: 'erleben', moments: 'momente', hospitality: 'einkehren', stay: 'uebernachten', arrival: 'anreise', contact: 'kontakt' },
+  en: { experience: 'experience', moments: 'moments', hospitality: 'hospitality', stay: 'stay', arrival: 'arrival', contact: 'contact' },
+  it: { experience: 'esperienza', moments: 'momenti', hospitality: 'ospitalita', stay: 'pernottamento', arrival: 'arrivo', contact: 'contatto' },
 } as const;
 
 const ids = sectionIds[lang];
@@ -143,11 +143,38 @@ const alternates = [
       </div>
     </section>
 
+    <section class="section" id={ids.moments}>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">{page.moments.label}</span>
+          <h2>{page.moments.title}</h2>
+          <p>{page.moments.text}</p>
+          <p class="moment-quote">{page.moments.quote}</p>
+        </div>
+        <div class="moments-grid">
+          {page.moments.cards.map((card) => (
+            <article class="moment-card">
+              <Image
+                src={images[card.imageKey]}
+                alt={card.imageAlt}
+                widths={[640, 960, 1280]}
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+              <div class="moment-card__body">
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section class="section" id={ids.hospitality}>
       <div class="shell split split--hospitality">
         <figure class="image-frame image-frame--wide">
           <Image
-            src={images.hutSpring}
+            src={images[page.hospitality.imageKey]}
             alt={page.hospitality.imageAlt}
             widths={[640, 960, 1280]}
             sizes="(max-width: 900px) 100vw, 45vw"
