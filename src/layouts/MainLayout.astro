@@ -5,9 +5,11 @@ interface Props {
   title: string;
   description: string;
   locale: string;
+  canonicalUrl?: string;
+  alternates?: Array<{ hrefLang: string; href: string }>;
 }
 
-const { title, description, locale } = Astro.props;
+const { title, description, locale, canonicalUrl, alternates = [] } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,6 +20,14 @@ const { title, description, locale } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#1b3024" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    {alternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.hrefLang} href={alternate.href} />
+    ))}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
