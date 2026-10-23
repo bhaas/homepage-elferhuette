@@ -1,14 +1,14 @@
-import alpineRidge from '../assets/elferhuette/alpine-ridge.jpg';
+import doubleRainbow from '../assets/elferhuette/double-rainbow.jpg';
+import gentians from '../assets/elferhuette/gentians.jpg';
 import heroClouds from '../assets/elferhuette/hero-clouds.jpg';
-import hutSpring from '../assets/elferhuette/hut-spring.jpg';
-import originalEveningLight from '../assets/elferhuette/original-evening-light.jpg';
+import hutStube from '../assets/elferhuette/hut-stube.jpg';
 import originalSummerValley from '../assets/elferhuette/original-summer-valley.jpg';
 import originalSummerWide from '../assets/elferhuette/original-summer-wide.jpg';
-import originalVintageTalblick from '../assets/elferhuette/original-vintage-talblick.jpg';
-import originalWinterWide from '../assets/elferhuette/original-winter-wide.jpg';
-import sleepingRoom from '../assets/elferhuette/sleeping-room.jpg';
-import summerRidge from '../assets/elferhuette/summer-ridge.jpg';
+import strawberryCake from '../assets/elferhuette/strawberry-cake.jpg';
+import summerAlpineRoses from '../assets/elferhuette/summer-alpine-roses.jpg';
+import summitShrine from '../assets/elferhuette/summit-shrine.jpg';
 import winterHut from '../assets/elferhuette/winter-hut.jpg';
+import winterPanorama from '../assets/elferhuette/winter-panorama.jpg';
 
 export const locales = ['de', 'en', 'it'] as const;
 export type Locale = (typeof locales)[number];
@@ -16,15 +16,15 @@ export type Locale = (typeof locales)[number];
 export const images = {
   heroClouds,
   winterHut,
-  summerRidge,
-  alpineRidge,
-  sleepingRoom,
-  hutSpring,
-  originalEveningLight,
+  summerAlpineRoses,
+  winterPanorama,
+  summitShrine,
+  hutStube,
+  strawberryCake,
+  doubleRainbow,
+  gentians,
   originalSummerValley,
   originalSummerWide,
-  originalVintageTalblick,
-  originalWinterWide,
 } as const;
 
 export type ImageKey = keyof typeof images;
@@ -82,22 +82,22 @@ export const siteContent = {
           title: 'Sommer am Elfer',
           text:
             'Wanderwege, Gipfelziele und die alpine Landschaft rund um Neustift machen die Hütte zu einem natürlichen Treffpunkt für Bergtage nach eigenem Tempo.',
-          imageKey: 'summerRidge' as ImageKey,
-          imageAlt: 'Felsige Berglandschaft im Stubaital im Sommer',
+          imageKey: 'summerAlpineRoses' as ImageKey,
+          imageAlt: 'Blühende Almrosen hoch über dem sommerlichen Stubaital',
         },
         {
           title: 'Winter mit Weitblick',
           text:
             'Wenn die Hänge weiß werden, zeigt der Elfer seine ruhige Seite: frische Bergluft, verschneite Wege und ein Panorama, das bis weit über das Tal reicht.',
-          imageKey: 'winterHut' as ImageKey,
-          imageAlt: 'Elferhütte im tief verschneiten Winter',
+          imageKey: 'winterPanorama' as ImageKey,
+          imageAlt: 'Tief verschneite Hänge mit Blick auf die Stubaier Gipfel',
         },
         {
           title: 'Ein Berg voller Möglichkeiten',
           text:
             'Der Elfer lädt zum Gehen, Schauen und Durchatmen ein. Wer die Natur respektvoll erlebt, findet hier einen Ort, der lange nachwirkt.',
-          imageKey: 'alpineRidge' as ImageKey,
-          imageAlt: 'Markante Gipfel und grüne Hänge nahe der Elferhütte',
+          imageKey: 'summitShrine' as ImageKey,
+          imageAlt: 'Hölzerner Bildstock auf einem Gipfel mit Blick auf die Kalkkögel',
         },
       ],
     },
@@ -115,22 +115,22 @@ export const siteContent = {
           imageAlt: 'Elferhütte mit Blick über das sommerliche Stubaital',
         },
         {
-          title: 'Winterpanorama am Elfer',
-          text: 'Die Hütte über den Wolken und darunter das Tal: ein Motiv, das seit Jahren für Elferhütte steht.',
-          imageKey: 'originalWinterWide' as ImageKey,
-          imageAlt: 'Breites Winterpanorama mit Elferhütte und verschneiten Bergen',
+          title: 'Kuchen mit Aussicht',
+          text: 'Hausgemachte Erdbeertorte auf der Terrasse - und tief unten liegt das Stubaital.',
+          imageKey: 'strawberryCake' as ImageKey,
+          imageAlt: 'Erdbeertorte auf der Hüttenterrasse mit Blick ins Stubaital',
         },
         {
-          title: 'Abendstimmung an der Hütte',
-          text: 'Wenn am Berg langsam Ruhe einkehrt, zeigt die Elferhütte ihren besonders stimmungsvollen Charakter.',
-          imageKey: 'originalEveningLight' as ImageKey,
-          imageAlt: 'Elferhütte in blauer Abendstimmung',
+          title: 'Regenbogen über Neustift',
+          text: 'Nach dem Gewitter klart es auf: Von der Hütte aus spannt sich ein doppelter Regenbogen über das Tal.',
+          imageKey: 'doubleRainbow' as ImageKey,
+          imageAlt: 'Doppelter Regenbogen über Neustift im Stubaital',
         },
         {
-          title: 'Klassischer Talblick',
-          text: 'Ein Motiv aus dem früheren Auftritt: die Hütte direkt über Neustift mit weitem Blick ins Tal.',
-          imageKey: 'originalVintageTalblick' as ImageKey,
-          imageAlt: 'Historischer Talblick mit Elferhütte',
+          title: 'Bergblumenzeit',
+          text: 'Im Frühsommer leuchten Enzian, Almrosen und Edelweiß entlang der Wege rund um den Elfer.',
+          imageKey: 'gentians' as ImageKey,
+          imageAlt: 'Blühender Enzian zwischen Kalksteinen am Elfer',
         },
       ],
     },
@@ -142,7 +142,7 @@ export const siteContent = {
       points: ['Für die Pause zwischendurch', 'Für den Austausch nach der Tour', 'Für Genuss mit großem Ausblick'],
       note: 'Für aktuelle Öffnungszeiten, Angebote und Gruppenanfragen freuen wir uns über Ihre Nachricht.',
       imageKey: 'originalSummerWide' as ImageKey,
-      imageAlt: 'Elferhütte an einem klaren Sommertag',
+      imageAlt: 'Elferhütte nach dem ersten Schnee über einem Wolkenmeer',
     },
     stay: {
       label: 'Übernachten',
@@ -151,7 +151,7 @@ export const siteContent = {
         'Eine Übernachtung in den Bergen macht aus einem Ausflug ein Erlebnis. Fragen Sie Ihr Wunschdatum einfach direkt bei uns an - wir informieren Sie gerne über die aktuellen Möglichkeiten.',
       points: ['Ideal für mehrtägige Bergtouren', 'Unkompliziert direkt anfragen', 'Bergmorgen inklusive'],
       primary: 'Übernachtung anfragen',
-      imageAlt: 'Schlafraum der Elferhütte',
+      imageAlt: 'Gemütliche Gaststube der Elferhütte mit Holzdecke',
     },
     arrival: {
       label: 'Anreise',
@@ -219,22 +219,22 @@ export const siteContent = {
           title: 'Summer on the Elfer',
           text:
             'Hiking paths, summit goals and the Alpine landscape around Neustift make the hut a natural meeting point for mountain days at your own pace.',
-          imageKey: 'summerRidge' as ImageKey,
-          imageAlt: 'Rocky summer mountain scenery in the Stubai Valley',
+          imageKey: 'summerAlpineRoses' as ImageKey,
+          imageAlt: 'Alpine roses in bloom high above the Stubai Valley in summer',
         },
         {
           title: 'Winter with a view',
           text:
             'When the slopes turn white, the Elfer reveals its peaceful side: fresh mountain air, snowy trails and a panorama stretching far beyond the valley.',
-          imageKey: 'winterHut' as ImageKey,
-          imageAlt: 'Elferhütte surrounded by deep winter snow',
+          imageKey: 'winterPanorama' as ImageKey,
+          imageAlt: 'Deep-snow slopes with views of the Stubai peaks',
         },
         {
           title: 'A mountain of possibilities',
           text:
             'The Elfer invites you to walk, look and breathe deeply. Experience nature respectfully and discover a place that lingers long after you leave.',
-          imageKey: 'alpineRidge' as ImageKey,
-          imageAlt: 'Dramatic peaks and green slopes near Elferhütte',
+          imageKey: 'summitShrine' as ImageKey,
+          imageAlt: 'Wooden wayside shrine on a summit overlooking the Kalkkögel',
         },
       ],
     },
@@ -252,22 +252,22 @@ export const siteContent = {
           imageAlt: 'Elferhütte overlooking the Stubai Valley in summer',
         },
         {
-          title: 'Winter panorama on the Elfer',
-          text: 'The hut above cloud layers with the snowy mountain chain behind it.',
-          imageKey: 'originalWinterWide' as ImageKey,
-          imageAlt: 'Wide winter panorama with Elferhütte and snowy peaks',
+          title: 'Cake with a view',
+          text: 'Homemade strawberry cake on the terrace - with the Stubai Valley far below.',
+          imageKey: 'strawberryCake' as ImageKey,
+          imageAlt: 'Strawberry cake on the hut terrace overlooking the Stubai Valley',
         },
         {
-          title: 'Evening atmosphere',
-          text: 'At dusk, Elferhütte shows the calm mountain character many guests remember.',
-          imageKey: 'originalEveningLight' as ImageKey,
-          imageAlt: 'Elferhütte glowing in blue evening light',
+          title: 'Rainbow over Neustift',
+          text: 'When a storm passes, a double rainbow sometimes arches over the valley right below the hut.',
+          imageKey: 'doubleRainbow' as ImageKey,
+          imageAlt: 'Double rainbow over Neustift in the Stubai Valley',
         },
         {
-          title: 'Classic valley view',
-          text: 'A signature image from the earlier website with the hut above Neustift.',
-          imageKey: 'originalVintageTalblick' as ImageKey,
-          imageAlt: 'Historic valley view featuring Elferhütte',
+          title: 'Alpine flower season',
+          text: 'In early summer, gentians, alpine roses and edelweiss brighten the trails around the Elfer.',
+          imageKey: 'gentians' as ImageKey,
+          imageAlt: 'Gentians in bloom among limestone rocks on the Elfer',
         },
       ],
     },
@@ -279,7 +279,7 @@ export const siteContent = {
       points: ['For a pause along the way', 'For stories after the tour', 'For good food with a grand view'],
       note: 'For current opening hours, offers and group enquiries, please get in touch with us.',
       imageKey: 'originalSummerWide' as ImageKey,
-      imageAlt: 'Elferhütte on a clear summer day',
+      imageAlt: 'Elferhütte after the first snowfall above a sea of clouds',
     },
     stay: {
       label: 'Stay overnight',
@@ -288,7 +288,7 @@ export const siteContent = {
         'An overnight stay in the mountains turns an outing into an experience. Send us your preferred date and we will gladly let you know about the current options.',
       points: ['Perfect for multi-day mountain tours', 'Simple direct enquiries', 'A mountain morning included'],
       primary: 'Enquire about an overnight stay',
-      imageAlt: 'Sleeping room at Elferhütte',
+      imageAlt: 'Cosy wood-panelled dining room at Elferhütte',
     },
     arrival: {
       label: 'Getting here',
@@ -356,22 +356,22 @@ export const siteContent = {
           title: 'Estate sull’Elfer',
           text:
             'Sentieri, cime e il paesaggio alpino attorno a Neustift rendono il rifugio un punto d’incontro naturale per giornate in montagna al proprio ritmo.',
-          imageKey: 'summerRidge' as ImageKey,
-          imageAlt: 'Paesaggio roccioso estivo nella Valle dello Stubai',
+          imageKey: 'summerAlpineRoses' as ImageKey,
+          imageAlt: 'Rododendri in fiore sopra la Valle dello Stubai in estate',
         },
         {
           title: 'Inverno con vista',
           text:
             'Quando i pendii diventano bianchi, l’Elfer mostra il suo lato tranquillo: aria fresca, sentieri innevati e un panorama che va ben oltre la valle.',
-          imageKey: 'winterHut' as ImageKey,
-          imageAlt: 'Elferhütte immersa nella neve invernale',
+          imageKey: 'winterPanorama' as ImageKey,
+          imageAlt: 'Pendii innevati con vista sulle cime dello Stubai',
         },
         {
           title: 'Una montagna di possibilità',
           text:
             'L’Elfer invita a camminare, osservare e respirare. Vivete la natura con rispetto e scoprite un luogo che resta nel cuore.',
-          imageKey: 'alpineRidge' as ImageKey,
-          imageAlt: 'Cime e pendii verdi vicino all’Elferhütte',
+          imageKey: 'summitShrine' as ImageKey,
+          imageAlt: 'Edicola in legno su una cima con vista sui Kalkkögel',
         },
       ],
     },
@@ -389,22 +389,22 @@ export const siteContent = {
           imageAlt: 'Elferhütte con vista estiva sulla Valle dello Stubai',
         },
         {
-          title: 'Panorama invernale sull’Elfer',
-          text: 'Il rifugio sopra le nuvole con la catena innevata sullo sfondo.',
-          imageKey: 'originalWinterWide' as ImageKey,
-          imageAlt: 'Ampio panorama invernale con Elferhütte e montagne innevate',
+          title: 'Torta con vista',
+          text: 'Torta di fragole fatta in casa sulla terrazza, con la Valle dello Stubai ai vostri piedi.',
+          imageKey: 'strawberryCake' as ImageKey,
+          imageAlt: 'Torta di fragole sulla terrazza del rifugio con vista sulla Valle dello Stubai',
         },
         {
-          title: 'Atmosfera serale',
-          text: 'Al calare della sera, l’Elferhütte mostra il suo lato più tranquillo e suggestivo.',
-          imageKey: 'originalEveningLight' as ImageKey,
-          imageAlt: 'Elferhütte illuminata nella luce blu della sera',
+          title: 'Arcobaleno su Neustift',
+          text: 'Dopo il temporale, a volte un doppio arcobaleno si apre sulla valle proprio sotto il rifugio.',
+          imageKey: 'doubleRainbow' as ImageKey,
+          imageAlt: 'Doppio arcobaleno su Neustift nella Valle dello Stubai',
         },
         {
-          title: 'Vista classica sulla valle',
-          text: 'Un’immagine simbolo del vecchio sito: il rifugio sopra Neustift con grande profondità di paesaggio.',
-          imageKey: 'originalVintageTalblick' as ImageKey,
-          imageAlt: 'Vista storica sulla valle con Elferhütte',
+          title: 'Fiori di montagna',
+          text: 'A inizio estate genziane, rododendri e stelle alpine colorano i sentieri intorno all’Elfer.',
+          imageKey: 'gentians' as ImageKey,
+          imageAlt: 'Genziane in fiore tra le rocce calcaree dell’Elfer',
         },
       ],
     },
@@ -416,7 +416,7 @@ export const siteContent = {
       points: ['Per una pausa lungo il cammino', 'Per raccontarsi dopo l’escursione', 'Per il gusto con vista grandiosa'],
       note: 'Per gli orari di apertura aggiornati, le offerte e le richieste per gruppi, contattateci direttamente.',
       imageKey: 'originalSummerWide' as ImageKey,
-      imageAlt: 'Elferhütte in una limpida giornata estiva',
+      imageAlt: 'Elferhütte dopo la prima neve sopra un mare di nuvole',
     },
     stay: {
       label: 'Pernottamento',
@@ -425,7 +425,7 @@ export const siteContent = {
         'Pernottare in montagna trasforma una gita in un’esperienza. Inviateci la data desiderata: saremo lieti di informarvi sulle possibilità attuali.',
       points: ['Ideale per tour di più giorni', 'Richieste dirette e semplici', 'Mattino in montagna incluso'],
       primary: 'Richiedi un pernottamento',
-      imageAlt: 'Dormitorio dell’Elferhütte',
+      imageAlt: 'Accogliente stube in legno dell’Elferhütte',
     },
     arrival: {
       label: 'Come arrivare',
