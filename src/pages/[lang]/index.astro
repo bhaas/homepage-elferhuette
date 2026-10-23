@@ -1,0 +1,217 @@
+---
+import { Image } from 'astro:assets';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { contact, images, locales, siteContent, type Locale } from '../../data/site';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Locale;
+const page = siteContent[lang];
+
+if (!page) {
+  throw new Error(`Unsupported language: ${Astro.params.lang}`);
+}
+
+const sectionIds = {
+  de: { experience: 'erleben', hospitality: 'einkehren', stay: 'uebernachten', arrival: 'anreise' },
+  en: { experience: 'experience', hospitality: 'hospitality', stay: 'stay', arrival: 'arrival' },
+  it: { experience: 'esperienza', hospitality: 'ospitalita', stay: 'pernottamento', arrival: 'arrivo' },
+} as const;
+
+const ids = sectionIds[lang];
+const languageLabels = { de: 'DE', en: 'EN', it: 'IT' } as const;
+---
+
+<MainLayout title={page.meta.title} description={page.meta.description} locale={lang}>
+  <header class="site-header">
+    <div class="shell header__inner">
+      <a class="wordmark" href={`/${lang}/`} aria-label="Elferhütte">
+        <span class="wordmark__name">Elferhütte</span>
+        <span class="wordmark__place">2.080 m · Stubaital</span>
+      </a>
+
+      <nav class="nav" aria-label={page.languageName}>
+        {page.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+
+      <div class="language-switcher" aria-label="Languages">
+        {locales.map((item) => (
+          <a href={`/${item}/`} lang={item} hreflang={item} aria-current={item === lang ? 'page' : undefined}>
+            {languageLabels[item]}
+          </a>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <Image
+        class="hero__image"
+        src={images.heroClouds}
+        alt={page.hero.imageAlt}
+        widths={[960, 1440, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="hero__shade"></div>
+      <div class="shell hero__content">
+        <div class="hero__eyebrow">{page.hero.overline}</div>
+        <h1>{page.hero.title}</h1>
+        <p>{page.hero.text}</p>
+        <div class="hero__actions">
+          <a class="button button--light" href={contact.emailHref}>{page.hero.primary}</a>
+          <a class="button button--ghost" href={`#${ids.experience}`}>{page.hero.secondary}</a>
+        </div>
+        <ul class="hero__facts">
+          {page.hero.facts.map((fact) => <li>{fact}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--intro">
+      <div class="shell split split--intro">
+        <div class="section-copy">
+          <span class="kicker">{page.intro.label}</span>
+          <h2>{page.intro.title}</h2>
+          <p>{page.intro.text}</p>
+          <div class="stats">
+            {page.intro.stats.map((stat) => (
+              <div class="stat">
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <figure class="image-frame image-frame--tall">
+          <Image
+            src={images.winterHut}
+            alt={page.intro.imageAlt}
+            widths={[720, 1080, 1440]}
+            sizes="(max-width: 900px) 100vw, 44vw"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--soft" id={ids.experience}>
+      <div class="shell">
+        <div class="section-heading section-heading--center">
+          <span class="kicker">{page.experiences.label}</span>
+          <h2>{page.experiences.title}</h2>
+        </div>
+        <div class="experience-grid">
+          {page.experiences.cards.map((card) => (
+            <article class="experience-card">
+              <Image
+                src={images[card.imageKey]}
+                alt={card.imageAlt}
+                widths={[640, 960, 1280]}
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+              <div class="experience-card__body">
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id={ids.hospitality}>
+      <div class="shell split split--hospitality">
+        <figure class="image-frame image-frame--wide">
+          <Image
+            src={images.hutSpring}
+            alt={page.hospitality.imageAlt}
+            widths={[640, 960, 1280]}
+            sizes="(max-width: 900px) 100vw, 45vw"
+          />
+        </figure>
+        <div class="section-copy section-copy--inset">
+          <span class="kicker">{page.hospitality.label}</span>
+          <h2>{page.hospitality.title}</h2>
+          <p>{page.hospitality.text}</p>
+          <ul class="tick-list">
+            {page.hospitality.points.map((point) => <li>{point}</li>)}
+          </ul>
+          <p class="notice">{page.hospitality.note}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id={ids.stay}>
+      <div class="shell split split--stay">
+        <div class="section-copy section-copy--light">
+          <span class="kicker">{page.stay.label}</span>
+          <h2>{page.stay.title}</h2>
+          <p>{page.stay.text}</p>
+          <ul class="tick-list">
+            {page.stay.points.map((point) => <li>{point}</li>)}
+          </ul>
+          <a class="button button--sand" href={contact.emailHref}>{page.stay.primary}</a>
+        </div>
+        <figure class="image-frame image-frame--stay">
+          <Image
+            src={images.sleepingRoom}
+            alt={page.stay.imageAlt}
+            widths={[720, 1080, 1440]}
+            sizes="(max-width: 900px) 100vw, 45vw"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id={ids.arrival}>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">{page.arrival.label}</span>
+          <h2>{page.arrival.title}</h2>
+          <p>{page.arrival.text}</p>
+        </div>
+        <div class="arrival-grid">
+          {page.arrival.items.map((item, index) => (
+            <article class="arrival-item">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="shell contact__inner">
+        <div>
+          <span class="kicker">{page.contact.label}</span>
+          <h2>{page.contact.title}</h2>
+          <p>{page.contact.text}</p>
+        </div>
+        <div class="contact__links">
+          <a href={contact.phoneHref}>
+            <span>{page.contact.phoneText}</span>
+            <strong>{contact.phoneLabel}</strong>
+          </a>
+          <a href={contact.emailHref}>
+            <span>{page.contact.emailText}</span>
+            <strong>{contact.emailLabel}</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <span class="wordmark__name">Elferhütte</span>
+      <span>{page.contact.footer}</span>
+      <a href={contact.emailHref}>{contact.emailLabel}</a>
+    </div>
+  </footer>
+</MainLayout>
