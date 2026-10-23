@@ -15,9 +15,9 @@ if (!page) {
 }
 
 const sectionIds = {
-  de: { experience: 'erleben', gallery: 'galerie', hospitality: 'einkehren', stay: 'uebernachten', arrival: 'anreise', contact: 'kontakt' },
-  en: { experience: 'experience', gallery: 'gallery', hospitality: 'hospitality', stay: 'stay', arrival: 'arrival', contact: 'contact' },
-  it: { experience: 'esperienza', gallery: 'galleria', hospitality: 'ospitalita', stay: 'pernottamento', arrival: 'arrivo', contact: 'contatto' },
+  de: { experience: 'erleben', gallery: 'galerie', hospitality: 'einkehren', stay: 'uebernachten', prices: 'preise', arrival: 'anreise', contact: 'kontakt' },
+  en: { experience: 'experience', gallery: 'gallery', hospitality: 'hospitality', stay: 'stay', prices: 'prices', arrival: 'arrival', contact: 'contact' },
+  it: { experience: 'esperienza', gallery: 'galleria', hospitality: 'ospitalita', stay: 'pernottamento', prices: 'prezzi', arrival: 'arrivo', contact: 'contatto' },
 } as const;
 
 const ids = sectionIds[lang];
@@ -243,6 +243,60 @@ const alternates = [
             sizes="(max-width: 900px) 100vw, 45vw"
           />
         </figure>
+      </div>
+    </section>
+
+    <section class="section section--soft" id={ids.prices}>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">{page.prices.label}</span>
+          <h2>{page.prices.title}</h2>
+          <p>{page.prices.text}</p>
+        </div>
+        <div class="price-layout">
+          <div class="price-offers">
+            {page.prices.offers.map((offer) => (
+              <article class:list={['price-card', offer.badge && 'price-card--featured']}>
+                {offer.badge && <span class="price-card__badge">{offer.badge}</span>}
+                <h3>{offer.name}</h3>
+                <p class="price-card__amount">
+                  <span class="price-card__currency">€</span>
+                  <strong>{offer.price}</strong>
+                </p>
+                <p class="price-card__unit">{page.prices.perNight}</p>
+                <p class="price-card__detail">{offer.detail}</p>
+              </article>
+            ))}
+          </div>
+          <div class="price-info">
+            <div>
+              <h3>{page.prices.includedTitle}</h3>
+              <ul class="check-list">
+                {page.prices.included.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h3>{page.prices.extrasTitle}</h3>
+              <dl class="price-extras">
+                {page.prices.extras.map((extra) => (
+                  <div>
+                    <dt>{extra.label}</dt>
+                    <dd>{extra.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p class="price-note">{page.prices.extrasNote}</p>
+            </div>
+          </div>
+        </div>
+        <div class="price-footer">
+          <ul class="price-rules">
+            {page.prices.notes.map((note) => <li>{note}</li>)}
+          </ul>
+          <a class="button button--dark" href={contact.emailHref}>{page.prices.primary}</a>
+        </div>
+        <p class="price-quote">{page.prices.quote}</p>
+        <p class="price-note price-note--center">{page.prices.disclaimer}</p>
       </div>
     </section>
 
