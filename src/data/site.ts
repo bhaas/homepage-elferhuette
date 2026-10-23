@@ -12,6 +12,10 @@ import galleryHayBarn from '../assets/elferhuette/gallery-hay-barn.jpg';
 import galleryMilkCans from '../assets/elferhuette/gallery-milk-cans.jpg';
 import galleryNightLights from '../assets/elferhuette/gallery-night-lights.jpg';
 import gentians from '../assets/elferhuette/gentians.jpg';
+import history1933 from '../assets/elferhuette/history-1933.jpg';
+import history1967 from '../assets/elferhuette/history-1967.jpg';
+import historyMules from '../assets/elferhuette/history-mules.jpg';
+import historySkiSchool from '../assets/elferhuette/history-ski-school.jpg';
 import heroClouds from '../assets/elferhuette/hero-clouds.jpg';
 import hutStube from '../assets/elferhuette/hut-stube.jpg';
 import originalSummerValley from '../assets/elferhuette/original-summer-valley.jpg';
@@ -49,6 +53,10 @@ export const images = {
   galleryHayBarn,
   galleryMilkCans,
   galleryNightLights,
+  history1933,
+  historyMules,
+  history1967,
+  historySkiSchool,
 } as const;
 
 export type ImageKey = keyof typeof images;
@@ -169,6 +177,7 @@ export const siteContent = {
       { href: '#einkehren', label: 'Einkehren' },
       { href: '#uebernachten', label: 'Übernachten' },
       { href: '#preise', label: 'Preise' },
+      { href: '#geschichte', label: 'Geschichte' },
       { href: '#anreise', label: 'Anreise' },
       { href: '#kontakt', label: 'Kontakt' },
     ],
@@ -284,6 +293,32 @@ export const siteContent = {
       disclaimer: 'Druckfehler und Änderungen vorbehalten.',
       primary: 'Zimmer anfragen',
     },
+    history: {
+      label: "Geschichte",
+      title: "Seit 1933 ein Zuhause am Berg.",
+      text: "Die Elferhütte ist eine private Hütte und seit Generationen in Familienhand. Fritz und Christine Haas haben sie rund 50 Jahre lang mit viel Herzblut geführt – durch Krieg, Brand und Wiederaufbau, durch unzählige Bergsommer und Skiwinter.",
+      photos: [
+        { imageKey: 'history1933' as ImageKey, caption: "Die erste Elferhütte, 1933–1964", alt: "Die gemauerte erste Elferhütte vor den Kalkkögeln" },
+        { imageKey: 'historyMules' as ImageKey, caption: "Säumer mit Mulis, um 1955", alt: "Säumer mit beladenen Mulis auf dem Weg zur Hütte" },
+        { imageKey: 'history1967' as ImageKey, caption: "Um 1967, vor dem Brand", alt: "Historische Ansichtskarte der Elferhütte im Sommer" },
+        { imageKey: 'historySkiSchool' as ImageKey, caption: "Skischule am Elfer nach dem Wiederaufbau", alt: "Historische Ansichtskarte mit Skischule vor der neuen Elferhütte" },
+      ],
+      milestones: [
+        { year: "1933", title: "Die erste Hütte", text: "Am Orenkopf entsteht die Elferhütte als private Berghütte." },
+        { year: "1939–1945", title: "Schwere Jahre", text: "Im Zweiten Weltkrieg wird die Hütte geplündert." },
+        { year: "bis 1964", title: "Mit Pferd „Max“ hinauf", text: "Versorgt wird mit Pferd „Max“: Der junge Fritz Haas geht dafür rund 3,5 Stunden von Neder über die Herzebenalm hinauf. Ab den 1950er-Jahren ist die Hütte ein beliebtes Skitourenziel." },
+        { year: "1964", title: "Der Elferlift kommt", text: "Mit tatkräftiger Hilfe der Familie wird der Elferlift gebaut – im Winter 1964/65 beginnt der Skibetrieb am Elfer." },
+        { year: "1968", title: "Der Brand", text: "Am 15. Oktober 1968 brennt die Elferhütte ab." },
+        { year: "1969", title: "Wiederaufbau", text: "Familie Fritz Haas baut die Hütte neu auf. Das Material kommt per Sessellift und Materialseilbahn auf den Berg, ein Stromkabel aus dem Tal bringt Strom." },
+        { year: "1972–2000", title: "Wasser, Wege, Kanal", text: "Neue Dachisolierung nach Sturmschäden, 1983 ein eigener Weg abseits der Piste, 1988 und 1992 Wasserleitungen und Pumpstation. 2000 folgt ein Kanal, 1.000 Höhenmeter hinunter ins öffentliche Netz." },
+        { year: "2003–2014", title: "Technik am Berg", text: "Internet ab 2003, 2005 die Sanierung der Materialseilbahn, 2010 der Bau des Schneeräumers „Schneehaase“, 2013 eine Brandmeldeanlage, 2014 energiesparende Fenster." },
+        { year: "2015–heute", title: "Laufend erneuert", text: "Küche, Kühlung und Gasanlage (2015–2017), LED-Licht und Schankanlage (2019) und seither laufende Reparaturen, Wegverbesserungen und die Beseitigung von Sturmschäden." },
+      ],
+      factsTitle: "Gut zu wissen",
+      facts: ["Die Materialseilbahn musste viermal gebaut werden.", "Das Wasser wird mit zwei Pumpstationen fast aus dem Pinnistal heraufgepumpt.", "Seit 2000 führt ein Kanal 1.000 Höhenmeter hinunter ins Tal."],
+      appealTitle: "Eine Bitte an unsere Gäste",
+      appeal: "Private Hütten erhalten keine öffentlichen Förderungen. Jede Einkehr hilft, die Elferhütte für kommende Generationen zu erhalten. Danke an alle Freunde der Hütte aus ganz Europa!",
+    },
     arrival: {
       label: 'Anreise',
       title: 'Der Weg ist Teil des Erlebnisses.',
@@ -318,6 +353,7 @@ export const siteContent = {
       { href: '#hospitality', label: 'Hospitality' },
       { href: '#stay', label: 'Stay overnight' },
       { href: '#prices', label: 'Prices' },
+      { href: '#history', label: 'History' },
       { href: '#arrival', label: 'Getting here' },
       { href: '#contact', label: 'Contact' },
     ],
@@ -433,6 +469,32 @@ export const siteContent = {
       disclaimer: 'Subject to change; errors excepted.',
       primary: 'Request a room',
     },
+    history: {
+      label: "History",
+      title: "A home on the mountain since 1933.",
+      text: "Elferhütte is a private hut that has been in family hands for generations. Fritz and Christine Haas ran it with heart and soul for around 50 years – through war, fire and rebuilding, through countless mountain summers and ski winters.",
+      photos: [
+        { imageKey: 'history1933' as ImageKey, caption: "The first Elferhütte, 1933–1964", alt: "The first stone-built Elferhütte in front of the Kalkkögel" },
+        { imageKey: 'historyMules' as ImageKey, caption: "Mule drivers, around 1955", alt: "Mule drivers with loaded mules on the way to the hut" },
+        { imageKey: 'history1967' as ImageKey, caption: "Around 1967, before the fire", alt: "Historic postcard of Elferhütte in summer" },
+        { imageKey: 'historySkiSchool' as ImageKey, caption: "Ski school at the Elfer after the rebuild", alt: "Historic postcard showing a ski school in front of the new Elferhütte" },
+      ],
+      milestones: [
+        { year: "1933", title: "The first hut", text: "Elferhütte is built on the Orenkopf as a private mountain hut." },
+        { year: "1939–1945", title: "Hard years", text: "During the Second World War the hut is plundered." },
+        { year: "until 1964", title: "Up with Max the horse", text: "Supplies come up with the horse “Max”: young Fritz Haas walks about 3.5 hours from Neder via the Herzebenalm. From the 1950s the hut is a popular ski-touring destination." },
+        { year: "1964", title: "The Elfer lift arrives", text: "With the family’s active help the Elferlift is built – skiing on the Elfer begins in the winter of 1964/65." },
+        { year: "1968", title: "The fire", text: "On 15 October 1968 Elferhütte burns down." },
+        { year: "1969", title: "Rebuilding", text: "The Fritz Haas family rebuilds the hut. Materials come up by chairlift and material ropeway, and a cable from the valley brings electricity." },
+        { year: "1972–2000", title: "Water, trails, sewer", text: "New roof insulation after storm damage, a separate trail away from the piste in 1983, water pipes and a pump station in 1988 and 1992. In 2000 a sewer line follows, 1,000 vertical metres down to the public network." },
+        { year: "2003–2014", title: "Technology on the mountain", text: "Internet from 2003, the ropeway overhaul in 2005, the “Schneehaase” snow-clearing machine built in 2010, a fire alarm system in 2013 and energy-saving windows in 2014." },
+        { year: "2015–today", title: "Constantly renewed", text: "Kitchen, cooling and gas system (2015–2017), LED lighting and tap system (2019) and since then ongoing repairs, trail improvements and clearing up storm damage." },
+      ],
+      factsTitle: "Good to know",
+      facts: ["The material ropeway had to be built four times.", "Water is pumped up from almost as far down as the Pinnistal using two pump stations.", "Since 2000 a sewer line has run 1,000 vertical metres down to the valley."],
+      appealTitle: "A request to our guests",
+      appeal: "Private huts receive no public funding. Every visit helps to preserve Elferhütte for generations to come. Thank you to all friends of the hut from all over Europe!",
+    },
     arrival: {
       label: 'Getting here',
       title: 'The journey is part of the experience.',
@@ -467,6 +529,7 @@ export const siteContent = {
       { href: '#ospitalita', label: 'Ospitalità' },
       { href: '#pernottamento', label: 'Pernottamento' },
       { href: '#prezzi', label: 'Prezzi' },
+      { href: '#storia', label: 'Storia' },
       { href: '#arrivo', label: 'Come arrivare' },
       { href: '#contatto', label: 'Contatto' },
     ],
@@ -581,6 +644,32 @@ export const siteContent = {
       quote: '«Solo ciò che si raggiunge a piedi si vive davvero.»',
       disclaimer: 'Salvo errori di stampa e modifiche.',
       primary: 'Richiedi una camera',
+    },
+    history: {
+      label: "Storia",
+      title: "Una casa in montagna dal 1933.",
+      text: "L’Elferhütte è un rifugio privato, da generazioni nelle mani della stessa famiglia. Fritz e Christine Haas l’hanno gestito con passione per circa 50 anni – attraverso guerra, incendio e ricostruzione, innumerevoli estati in montagna e inverni sugli sci.",
+      photos: [
+        { imageKey: 'history1933' as ImageKey, caption: "Il primo Elferhütte, 1933–1964", alt: "Il primo Elferhütte in muratura davanti alle Kalkkögel" },
+        { imageKey: 'historyMules' as ImageKey, caption: "Mulattieri, intorno al 1955", alt: "Mulattieri con muli carichi sulla strada verso il rifugio" },
+        { imageKey: 'history1967' as ImageKey, caption: "Intorno al 1967, prima dell’incendio", alt: "Cartolina storica dell’Elferhütte in estate" },
+        { imageKey: 'historySkiSchool' as ImageKey, caption: "Scuola di sci all’Elfer dopo la ricostruzione", alt: "Cartolina storica con una scuola di sci davanti al nuovo Elferhütte" },
+      ],
+      milestones: [
+        { year: "1933", title: "Il primo rifugio", text: "Sull’Orenkopf nasce l’Elferhütte come rifugio privato." },
+        { year: "1939–1945", title: "Anni difficili", text: "Durante la Seconda guerra mondiale il rifugio viene saccheggiato." },
+        { year: "fino al 1964", title: "In salita con il cavallo Max", text: "I rifornimenti salgono con il cavallo “Max”: il giovane Fritz Haas cammina circa 3,5 ore da Neder passando per la Herzebenalm. Dagli anni ’50 il rifugio è una meta amata per lo scialpinismo." },
+        { year: "1964", title: "Arriva l’Elferlift", text: "Con l’aiuto concreto della famiglia viene costruito l’Elferlift – nell’inverno 1964/65 inizia lo sci sull’Elfer." },
+        { year: "1968", title: "L’incendio", text: "Il 15 ottobre 1968 l’Elferhütte brucia." },
+        { year: "1969", title: "La ricostruzione", text: "La famiglia di Fritz Haas ricostruisce il rifugio. Il materiale sale con la seggiovia e la teleferica, e un cavo dalla valle porta la corrente." },
+        { year: "1972–2000", title: "Acqua, sentieri, fognatura", text: "Nuovo isolamento del tetto dopo i danni di una tempesta, nel 1983 un sentiero separato dalla pista, nel 1988 e 1992 condotte idriche e stazione di pompaggio. Nel 2000 segue la fognatura, 1.000 metri di dislivello fino alla rete pubblica." },
+        { year: "2003–2014", title: "Tecnica in quota", text: "Internet dal 2003, nel 2005 il rinnovo della teleferica, nel 2010 la costruzione dello sgombraneve “Schneehaase”, nel 2013 un impianto antincendio, nel 2014 finestre a risparmio energetico." },
+        { year: "2015–oggi", title: "Sempre rinnovato", text: "Cucina, refrigerazione e impianto a gas (2015–2017), luci LED e impianto di spillatura (2019) e da allora continue riparazioni, migliorie ai sentieri e lavori dopo le tempeste." },
+      ],
+      factsTitle: "Da sapere",
+      facts: ["La teleferica per il materiale è stata costruita quattro volte.", "L’acqua viene pompata quasi dal Pinnistal grazie a due stazioni di pompaggio.", "Dal 2000 una fognatura scende per 1.000 metri di dislivello fino a valle."],
+      appealTitle: "Una richiesta ai nostri ospiti",
+      appeal: "I rifugi privati non ricevono contributi pubblici. Ogni sosta aiuta a conservare l’Elferhütte per le generazioni future. Grazie a tutti gli amici del rifugio da tutta Europa!",
     },
     arrival: {
       label: 'Come arrivare',

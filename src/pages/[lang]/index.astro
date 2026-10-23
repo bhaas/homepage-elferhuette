@@ -15,9 +15,9 @@ if (!page) {
 }
 
 const sectionIds = {
-  de: { experience: 'erleben', gallery: 'galerie', hospitality: 'einkehren', stay: 'uebernachten', prices: 'preise', arrival: 'anreise', contact: 'kontakt' },
-  en: { experience: 'experience', gallery: 'gallery', hospitality: 'hospitality', stay: 'stay', prices: 'prices', arrival: 'arrival', contact: 'contact' },
-  it: { experience: 'esperienza', gallery: 'galleria', hospitality: 'ospitalita', stay: 'pernottamento', prices: 'prezzi', arrival: 'arrivo', contact: 'contatto' },
+  de: { experience: 'erleben', gallery: 'galerie', hospitality: 'einkehren', stay: 'uebernachten', prices: 'preise', history: 'geschichte', arrival: 'anreise', contact: 'kontakt' },
+  en: { experience: 'experience', gallery: 'gallery', hospitality: 'hospitality', stay: 'stay', prices: 'prices', history: 'history', arrival: 'arrival', contact: 'contact' },
+  it: { experience: 'esperienza', gallery: 'galleria', hospitality: 'ospitalita', stay: 'pernottamento', prices: 'prezzi', history: 'storia', arrival: 'arrivo', contact: 'contatto' },
 } as const;
 
 const ids = sectionIds[lang];
@@ -298,6 +298,49 @@ const alternates = [
         </div>
         <p class="price-quote">{page.prices.quote}</p>
         <p class="price-note price-note--center">{page.prices.disclaimer}</p>
+      </div>
+    </section>
+
+    <section class="section section--history" id={ids.history}>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">{page.history.label}</span>
+          <h2>{page.history.title}</h2>
+          <p>{page.history.text}</p>
+        </div>
+        <div class="history-photos">
+          {page.history.photos.map((photo) => (
+            <figure class="history-photo">
+              <Image src={images[photo.imageKey]} alt={photo.alt} widths={[400, 640, 900]} sizes="(max-width: 580px) 100vw, (max-width: 900px) 50vw, 25vw" loading="lazy" />
+              <figcaption>{photo.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <div class="history-layout">
+          <ol class="timeline">
+            {page.history.milestones.map((milestone) => (
+              <li class="timeline__item">
+                <span class="timeline__year">{milestone.year}</span>
+                <div>
+                  <h3>{milestone.title}</h3>
+                  <p>{milestone.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <aside class="history-aside">
+            <div class="history-card">
+              <h3>{page.history.factsTitle}</h3>
+              <ul class="check-list">
+                {page.history.facts.map((fact) => <li>{fact}</li>)}
+              </ul>
+            </div>
+            <div class="history-card history-card--appeal">
+              <h3>{page.history.appealTitle}</h3>
+              <p>{page.history.appeal}</p>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
 

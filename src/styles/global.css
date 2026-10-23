@@ -831,6 +831,151 @@ h3 {
   text-align: center;
 }
 
+.section--history {
+  background: #ece2cd;
+}
+
+.history-photos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 56px;
+}
+
+.history-photo {
+  margin: 0;
+  background: #fff;
+  padding: 10px 10px 14px;
+  box-shadow: 0 14px 30px rgba(16, 32, 24, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.history-photo:nth-child(odd) {
+  transform: rotate(-1.2deg);
+}
+
+.history-photo:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.history-photo:hover {
+  transform: rotate(0) translateY(-4px);
+}
+
+.history-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: sepia(0.18);
+}
+
+.history-photo figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.history-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 148px;
+  width: 2px;
+  background: var(--line);
+  content: '';
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 40px;
+}
+
+.timeline__item::before {
+  position: absolute;
+  top: 7px;
+  left: 143px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ece2cd;
+  border-radius: 50%;
+  background: var(--moss);
+  content: '';
+}
+
+.timeline__year {
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: right;
+}
+
+.timeline h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.timeline p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.history-aside {
+  display: grid;
+  gap: 22px;
+  position: sticky;
+  top: 110px;
+}
+
+.history-card {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 28px;
+}
+
+.history-card h3 {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+}
+
+.history-card--appeal {
+  border-color: transparent;
+  background: var(--forest);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.history-card--appeal h3 {
+  color: var(--sand);
+}
+
+.history-card--appeal p {
+  margin: 0;
+  line-height: 1.65;
+}
+
 .tick-list {
   display: grid;
   gap: 12px;
@@ -1026,8 +1171,17 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .price-layout {
+  .price-layout,
+  .history-layout {
     grid-template-columns: 1fr;
+  }
+
+  .history-photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .history-aside {
+    position: static;
   }
 
   .gallery-grid {
@@ -1098,6 +1252,36 @@ h3 {
 
   .hero__facts li + li::before {
     display: none;
+  }
+
+  .history-photos {
+    gap: 14px;
+  }
+
+  .history-photo {
+    padding: 6px 6px 10px;
+  }
+
+  .history-photo figcaption {
+    font-size: 0.8rem;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding-left: 30px;
+  }
+
+  .timeline__item::before {
+    left: 0;
+  }
+
+  .timeline__year {
+    text-align: left;
   }
 
   .section,
