@@ -4,7 +4,6 @@ import hutSpring from '../assets/elferhuette/hut-spring.jpg';
 import originalEveningLight from '../assets/elferhuette/original-evening-light.jpg';
 import originalSummerValley from '../assets/elferhuette/original-summer-valley.jpg';
 import originalSummerWide from '../assets/elferhuette/original-summer-wide.jpg';
-import originalValleyPanorama from '../assets/elferhuette/original-valley-panorama.jpg';
 import originalVintageTalblick from '../assets/elferhuette/original-vintage-talblick.jpg';
 import originalWinterWide from '../assets/elferhuette/original-winter-wide.jpg';
 import sleepingRoom from '../assets/elferhuette/sleeping-room.jpg';
@@ -24,7 +23,6 @@ export const images = {
   originalEveningLight,
   originalSummerValley,
   originalSummerWide,
-  originalValleyPanorama,
   originalVintageTalblick,
   originalWinterWide,
 } as const;
@@ -127,12 +125,6 @@ export const siteContent = {
           text: 'Wenn am Berg langsam Ruhe einkehrt, zeigt die Elferhütte ihren besonders stimmungsvollen Charakter.',
           imageKey: 'originalEveningLight' as ImageKey,
           imageAlt: 'Elferhütte in blauer Abendstimmung',
-        },
-        {
-          title: 'Panorama aus dem Sommer 2019',
-          text: 'Der breite Blick über die Bergkämme zeigt die Elferhütte als Ausgangspunkt und Aussichtsbalkon zugleich.',
-          imageKey: 'originalValleyPanorama' as ImageKey,
-          imageAlt: 'Breites Sommerpanorama mit Elferhütte und Stubaital',
         },
         {
           title: 'Klassischer Talblick',
@@ -272,12 +264,6 @@ export const siteContent = {
           imageAlt: 'Elferhütte glowing in blue evening light',
         },
         {
-          title: 'Summer panorama 2019',
-          text: 'A wide mountain sweep that shows the hut as both destination and viewpoint.',
-          imageKey: 'originalValleyPanorama' as ImageKey,
-          imageAlt: 'Wide summer panorama with Elferhütte and the Stubai Valley',
-        },
-        {
           title: 'Classic valley view',
           text: 'A signature image from the earlier website with the hut above Neustift.',
           imageKey: 'originalVintageTalblick' as ImageKey,
@@ -413,12 +399,6 @@ export const siteContent = {
           text: 'Al calare della sera, l’Elferhütte mostra il suo lato più tranquillo e suggestivo.',
           imageKey: 'originalEveningLight' as ImageKey,
           imageAlt: 'Elferhütte illuminata nella luce blu della sera',
-        },
-        {
-          title: 'Panorama estivo 2019',
-          text: 'Una veduta ampia che mostra il rifugio come meta e punto panoramico allo stesso tempo.',
-          imageKey: 'originalValleyPanorama' as ImageKey,
-          imageAlt: 'Ampio panorama estivo con Elferhütte e Valle dello Stubai',
         },
         {
           title: 'Vista classica sulla valle',
