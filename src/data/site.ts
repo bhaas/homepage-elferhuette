@@ -172,9 +172,9 @@ export const siteContent = {
   de: {
     languageName: 'Deutsch',
     meta: {
-      title: 'Elferhütte | 2.080 m über dem Stubaital',
+      title: 'Elferhütte | Berghütte & Restaurant in Neustift im Stubaital',
       description:
-        'Elferhütte in Neustift: Bergmomente, ehrliche Hüttenküche und Weitblick auf 2.080 Metern im Stubaital.',
+        'Elferhütte auf 2.080 m über Neustift im Stubaital, Tirol: Hüttenrestaurant, Panoramaterrasse und Zimmer mit Halbpension – 30 Min. ab Bergstation Elferbahn.',
     },
     nav: [
       { href: '#erleben', label: 'Erleben' },
@@ -355,9 +355,9 @@ export const siteContent = {
   en: {
     languageName: 'English',
     meta: {
-      title: 'Elferhütte | 2,080 m above the Stubai Valley',
+      title: 'Elferhütte | Mountain Hut & Restaurant in Neustift, Stubai Valley',
       description:
-        'Elferhütte in Neustift: mountain moments, honest Alpine cooking and sweeping views at 2,080 metres in the Stubai Valley.',
+        'Elferhütte at 2,080 m above Neustift in the Stubai Valley, Tyrol: hut restaurant, panoramic terrace and rooms with half board – 30 min from the Elfer gondola.',
     },
     nav: [
       { href: '#experience', label: 'Experience' },
@@ -538,9 +538,9 @@ export const siteContent = {
   it: {
     languageName: 'Italiano',
     meta: {
-      title: 'Elferhütte | 2.080 m sopra la Valle dello Stubai',
+      title: 'Elferhütte | Rifugio e ristorante a Neustift, Valle dello Stubai',
       description:
-        'Elferhütte a Neustift: momenti in montagna, cucina alpina genuina e viste grandiose a 2.080 metri nella Valle dello Stubai.',
+        'Elferhütte a 2.080 m sopra Neustift nella Valle dello Stubai, Tirolo: ristorante, terrazza panoramica e camere con mezza pensione – 30 min dalla cabinovia Elfer.',
     },
     nav: [
       { href: '#esperienza', label: 'Esperienza' },

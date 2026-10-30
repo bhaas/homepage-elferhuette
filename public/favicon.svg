@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title>Hotel Klima favicon</title>
-  <rect width="64" height="64" rx="16" fill="#1f4b44" />
-  <path d="M12 40 26 24l8 9 7-8 11 15H12Z" fill="#f7f4ef" />
-  <path d="M26 24h12l-4-6-8 6Z" fill="#b9824f" />
+  <title>Elferhütte</title>
+  <rect width="64" height="64" rx="16" fill="#1b3024" />
+  <path d="M8 46 25 20l9 12 7-9 15 23H8Z" fill="#f5f1e8" />
+  <path d="M25 20l5 7.5-5-2.5-5 2.5Z" fill="#d9c7a8" />
+  <rect x="29" y="38" width="9" height="6" fill="#1b3024" />
 </svg>

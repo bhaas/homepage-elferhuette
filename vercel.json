@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/de/", "permanent": false },
+    { "source": "/index.html", "destination": "/de/", "permanent": true },
+    { "source": "/home.html", "destination": "/de/", "permanent": true },
+    { "source": "/aktuelles.html", "destination": "/de/", "permanent": true },
+    { "source": "/links_1.html", "destination": "/de/", "permanent": true },
+    { "source": "/anreise.html", "destination": "/de/#anreise", "permanent": true },
+    { "source": "/preise.html", "destination": "/de/#preise", "permanent": true },
+    { "source": "/geschichte.html", "destination": "/de/#geschichte", "permanent": true },
+    { "source": "/k-che.html", "destination": "/de/#einkehren", "permanent": true },
+    { "source": "/wanderungen.html", "destination": "/de/#erleben", "permanent": true },
+    { "source": "/elfer-klettersteige.html", "destination": "/de/#erleben", "permanent": true },
+    { "source": "/winter.html", "destination": "/de/#erleben", "permanent": true },
+    { "source": "/ausblicke.html", "destination": "/de/#galerie", "permanent": true },
+    { "source": "/bergblumenzeit.html", "destination": "/de/#galerie", "permanent": true },
+    { "source": "/bildergalerie_1.html", "destination": "/de/#galerie", "permanent": true },
+    { "source": "/:page(.*)\\.html", "destination": "/de/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/_astro/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}

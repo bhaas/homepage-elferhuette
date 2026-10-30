@@ -42,6 +42,79 @@ const alternates = [
   ...locales.map((item) => ({ hrefLang: item, href: `${canonicalHost}/${item}/` })),
   { hrefLang: 'x-default', href: `${canonicalHost}/de/` },
 ];
+
+const ogImageAsset = await getImage({ src: images.heroClouds, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+const ogImage = { src: ogImageAsset.src, width: 1200, height: 630, alt: page.hero.imageAlt };
+const schemaImages = await Promise.all(
+  [images.heroClouds, images.winterHut, images.hutStube, images.galleryAerial].map(
+    async (src) => new URL((await getImage({ src, width: 1600, format: 'jpg' })).src, canonicalHost).href,
+  ),
+);
+const hutId = `${canonicalHost}/#elferhuette`;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['LodgingBusiness', 'Restaurant'],
+      '@id': hutId,
+      name: 'Elferhütte',
+      alternateName: ['Elferhütte Restaurant', 'Bergrestaurant Elferhütte', 'Wanderzentrum Elferhütte'],
+      description: page.meta.description,
+      url: canonicalUrl,
+      image: schemaImages,
+      logo: `${canonicalHost}/icon-512.png`,
+      telephone: '+43 5226 2818',
+      email: contact.emailLabel,
+      vatID: contact.vatId,
+      foundingDate: '1933',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Elferhütte 294',
+        postalCode: '6167',
+        addressLocality: 'Neustift im Stubaital',
+        addressRegion: 'Tirol',
+        addressCountry: 'AT',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 47.09507, longitude: 11.31951, elevation: 2080 },
+      hasMap: contact.mapsHref,
+      containedInPlace: { '@type': 'Place', name: 'Stubaital, Tirol' },
+      servesCuisine: ['Tiroler Küche', 'Österreichische Küche'],
+      acceptsReservations: true,
+      currenciesAccepted: 'EUR',
+      priceRange: '€€',
+      amenityFeature: [
+        { '@type': 'LocationFeatureSpecification', name: 'WLAN', value: true },
+        { '@type': 'LocationFeatureSpecification', name: 'Panoramaterrasse', value: true },
+      ],
+      makesOffer: page.prices.offers.map((offer) => ({
+        '@type': 'Offer',
+        name: offer.name,
+        description: offer.detail,
+        price: offer.price,
+        priceCurrency: 'EUR',
+      })),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${canonicalHost}/#website`,
+      url: `${canonicalHost}/`,
+      name: 'Elferhütte',
+      inLanguage: [...locales],
+      publisher: { '@id': hutId },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${canonicalUrl}#webpage`,
+      url: canonicalUrl,
+      name: page.meta.title,
+      description: page.meta.description,
+      inLanguage: lang,
+      isPartOf: { '@id': `${canonicalHost}/#website` },
+      about: { '@id': hutId },
+      primaryImageOfPage: schemaImages[0],
+    },
+  ],
+};
 ---
 
 <MainLayout
@@ -50,6 +123,8 @@ const alternates = [
   locale={lang}
   canonicalUrl={canonicalUrl}
   alternates={alternates}
+  ogImage={ogImage}
+  structuredData={structuredData}
 >
   <a class="skip-link" href="#main-content">{skipLabels[lang]}</a>
   <header class="site-header">
