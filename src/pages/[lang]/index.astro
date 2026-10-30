@@ -1,6 +1,7 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { contact, galleryItems, images, locales, siteContent, type Locale } from '../../data/site';
 
 export function getStaticPaths() {
@@ -483,13 +484,7 @@ const structuredData = {
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="shell footer__inner">
-      <span class="wordmark__name">Elferhütte</span>
-      <span>{page.contact.footer}</span>
-      <a href={contact.emailHref}>{contact.emailLabel}</a>
-    </div>
-  </footer>
+  <SiteFooter lang={lang} />
 </MainLayout>
 
 <script>

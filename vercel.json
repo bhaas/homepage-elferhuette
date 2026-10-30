@@ -9,6 +9,8 @@
     { "source": "/preise.html", "destination": "/de/#preise", "permanent": true },
     { "source": "/geschichte.html", "destination": "/de/#geschichte", "permanent": true },
     { "source": "/k-che.html", "destination": "/de/#einkehren", "permanent": true },
+    { "source": "/impressum.html", "destination": "/de/impressum/", "permanent": true },
+    { "source": "/datenschutz.html", "destination": "/de/impressum/#datenschutz", "permanent": true },
     { "source": "/wanderungen.html", "destination": "/de/#erleben", "permanent": true },
     { "source": "/elfer-klettersteige.html", "destination": "/de/#erleben", "permanent": true },
     { "source": "/winter.html", "destination": "/de/#erleben", "permanent": true },

@@ -1,0 +1,24 @@
+---
+import { contact, siteContent, type Locale } from '../data/site';
+import { legalContent, legalSlugs, privacyAnchors } from '../data/legal';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const legal = legalContent[lang];
+const legalHref = `/${lang}/${legalSlugs[lang]}/`;
+---
+
+<footer class="footer">
+  <div class="shell footer__inner">
+    <span class="wordmark__name notranslate" translate="no">Elferhütte</span>
+    <span>{siteContent[lang].contact.footer}</span>
+    <nav class="footer__links" aria-label={legal.footerImprint}>
+      <a href={legalHref}>{legal.footerImprint}</a>
+      <a href={`${legalHref}#${privacyAnchors[lang]}`}>{legal.footerPrivacy}</a>
+      <a href={contact.emailHref}>{contact.emailLabel}</a>
+    </nav>
+  </div>
+</footer>

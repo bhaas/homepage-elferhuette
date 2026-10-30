@@ -1,0 +1,106 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { contact, locales, type Locale } from '../../data/site';
+import { legalContent, legalOwner, legalSlugs, privacyAnchors } from '../../data/legal';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang, legal: legalSlugs[lang] } }));
+}
+
+const lang = Astro.params.lang as Locale;
+const legal = legalContent[lang];
+const { imprint, privacy } = legal;
+const canonicalHost = 'https://www.elferhuette.at';
+const canonicalUrl = `${canonicalHost}/${lang}/${legalSlugs[lang]}/`;
+const alternates = [
+  ...locales.map((item) => ({ hrefLang: item, href: `${canonicalHost}/${item}/${legalSlugs[item]}/` })),
+  { hrefLang: 'x-default', href: `${canonicalHost}/de/${legalSlugs.de}/` },
+];
+const languageLabels = { de: 'DE', en: 'EN', it: 'IT' } as const;
+const rows = [
+  { label: imprint.labels.phone, value: contact.phoneLabel, href: contact.phoneHref },
+  { label: imprint.labels.email, value: contact.emailLabel, href: contact.emailHref },
+  { label: imprint.labels.vat, value: contact.vatId },
+  { label: imprint.labels.purpose, value: imprint.values.purpose },
+  { label: imprint.labels.authority, value: imprint.values.authority },
+  { label: imprint.labels.chamber, value: imprint.values.chamber },
+  { label: imprint.labels.law, value: imprint.values.law },
+];
+---
+
+<MainLayout
+  title={legal.meta.title}
+  description={legal.meta.description}
+  locale={lang}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+>
+  <header class="site-header site-header--solid">
+    <div class="shell header__inner">
+      <a class="wordmark notranslate" translate="no" href={`/${lang}/`} aria-label="Elferhütte">
+        <span class="wordmark__name">Elferhütte</span>
+        <span class="wordmark__place">2.080 m · Stubaital</span>
+      </a>
+      <a class="legal__back" href={`/${lang}/`}>← {legal.back}</a>
+      <div class="language-switcher notranslate" translate="no">
+        {locales.map((item) => (
+          <a
+            href={`/${item}/${legalSlugs[item]}/`}
+            lang={item}
+            hreflang={item}
+            aria-current={item === lang ? 'page' : undefined}
+          >
+            {languageLabels[item]}
+          </a>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="shell legal__inner">
+      <section aria-labelledby="impressum-title">
+        <h1 id="impressum-title">{imprint.title}</h1>
+        <p class="legal__intro">{imprint.intro}</p>
+
+        <dl class="legal__facts">
+          <dt>{imprint.labels.owner}</dt>
+          <dd>
+            {legalOwner.name}<br />
+            {legalOwner.business}<br />
+            {legalOwner.street}<br />
+            {legalOwner.city}<br />
+            {legalOwner.country[lang]}
+          </dd>
+          {rows.map((row) => (
+            <>
+              <dt>{row.label}</dt>
+              <dd>{row.href ? <a href={row.href}>{row.value}</a> : row.value}</dd>
+            </>
+          ))}
+        </dl>
+
+        {imprint.blocks.map((block) => (
+          <>
+            <h2>{block.heading}</h2>
+            {block.paragraphs?.map((text) => <p>{text}</p>)}
+          </>
+        ))}
+      </section>
+
+      <section id={privacyAnchors[lang]} class="legal__privacy" aria-labelledby="privacy-title">
+        <h2 class="legal__title" id="privacy-title">{privacy.title}</h2>
+        <p class="legal__updated">{privacy.updated}</p>
+        {privacy.blocks.map((block) => (
+          <>
+            <h3>{block.heading}</h3>
+            {block.paragraphs?.map((text) => <p>{text}</p>)}
+          </>
+        ))}
+      </section>
+    </div>
+  </main>
+
+  <SiteFooter lang={lang} />
+</MainLayout>
