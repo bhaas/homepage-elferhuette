@@ -40,7 +40,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       text:
         'Unser Familienhotel in Neustift im Stubaital: gemütliche Zimmer, reichhaltiges Frühstück und der ideale Ausgangspunkt für Wanderungen zur Elferhütte und Skitage am Stubaier Gletscher.',
       linkLabel: 'Zum Hotel Klima',
-      imageAlt: 'Hotel Klima mit Blumenbalkonen vor den Bergen des Stubaitals',
+      imageAlt: 'Hotel Klima im tief verschneiten Stubaital vor schneebedeckten Gipfeln',
     },
     emergency: {
       title: 'Alpiner Notruf 140',
@@ -92,7 +92,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       text:
         'Our family-run hotel in Neustift im Stubaital: cosy rooms, a generous breakfast and the perfect base for hikes to the Elferhütte and ski days on the Stubai Glacier.',
       linkLabel: 'Visit Hotel Klima',
-      imageAlt: 'Hotel Klima with flower-decked balconies in front of the Stubai mountains',
+      imageAlt: 'Hotel Klima in the snow-covered Stubai Valley beneath wintry peaks',
     },
     emergency: {
       title: 'Alpine emergency 140',
@@ -144,7 +144,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       text:
         "Il nostro hotel di famiglia a Neustift im Stubaital: camere accoglienti, una ricca colazione e il punto di partenza ideale per escursioni all'Elferhütte e giornate di sci sul ghiacciaio dello Stubai.",
       linkLabel: "Scopri l'Hotel Klima",
-      imageAlt: "L'Hotel Klima con i balconi fioriti davanti alle montagne della Valle dello Stubai",
+      imageAlt: "L'Hotel Klima nella Valle dello Stubai innevata, davanti a cime imbiancate",
     },
     emergency: {
       title: 'Emergenza in montagna 140',
