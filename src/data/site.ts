@@ -185,6 +185,7 @@ export const siteContent = {
       { href: '#geschichte', label: 'Geschichte' },
       { href: '#anreise', label: 'Anreise' },
       { href: '#kontakt', label: 'Kontakt' },
+      { href: '/de/links/', label: 'Links' },
     ],
     hero: {
       overline: 'Stubaital · Tirol · 2.080 m',
@@ -368,6 +369,7 @@ export const siteContent = {
       { href: '#history', label: 'History' },
       { href: '#arrival', label: 'Getting here' },
       { href: '#contact', label: 'Contact' },
+      { href: '/en/links/', label: 'Links' },
     ],
     hero: {
       overline: 'Stubai Valley · Tyrol · 2,080 m',
@@ -551,6 +553,7 @@ export const siteContent = {
       { href: '#storia', label: 'Storia' },
       { href: '#arrivo', label: 'Come arrivare' },
       { href: '#contatto', label: 'Contatto' },
+      { href: '/it/link/', label: 'Link' },
     ],
     hero: {
       overline: 'Valle dello Stubai · Tirolo · 2.080 m',

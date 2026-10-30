@@ -1,0 +1,29 @@
+---
+import { locales, type Locale } from '../data/site';
+
+interface Props {
+  lang: Locale;
+  backLabel: string;
+  hrefFor: Record<Locale, string>;
+}
+
+const { lang, backLabel, hrefFor } = Astro.props;
+const languageLabels = { de: 'DE', en: 'EN', it: 'IT' } as const;
+---
+
+<header class="site-header site-header--solid">
+  <div class="shell header__inner">
+    <a class="wordmark notranslate" translate="no" href={`/${lang}/`} aria-label="Elferhütte">
+      <span class="wordmark__name">Elferhütte</span>
+      <span class="wordmark__place">2.080 m · Stubaital</span>
+    </a>
+    <a class="legal__back" href={`/${lang}/`}>← {backLabel}</a>
+    <div class="language-switcher notranslate" translate="no">
+      {locales.map((item) => (
+        <a href={hrefFor[item]} lang={item} hreflang={item} aria-current={item === lang ? 'page' : undefined}>
+          {languageLabels[item]}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>

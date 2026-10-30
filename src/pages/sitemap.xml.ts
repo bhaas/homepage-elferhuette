@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { locales } from '../data/site';
 import { legalSlugs } from '../data/legal';
+import { linkSlugs } from '../data/links';
 
 export const GET: APIRoute = ({ site }) => {
   const base = (site?.href ?? 'https://www.elferhuette.at/').replace(/\/$/, '');
@@ -21,6 +22,7 @@ ${alternates}
   };
   const urls = [
     ...entry((lang) => `/${lang}/`, (lang) => (lang === 'de' ? '1.0' : '0.8')),
+    ...entry((lang) => `/${lang}/${linkSlugs[lang]}/`, () => '0.5'),
     ...entry((lang) => `/${lang}/${legalSlugs[lang]}/`, () => '0.2'),
   ].join('\n');
 

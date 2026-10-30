@@ -4,7 +4,7 @@
     { "source": "/index.html", "destination": "/de/", "permanent": true },
     { "source": "/home.html", "destination": "/de/", "permanent": true },
     { "source": "/aktuelles.html", "destination": "/de/", "permanent": true },
-    { "source": "/links_1.html", "destination": "/de/", "permanent": true },
+    { "source": "/links_1.html", "destination": "/de/links/", "permanent": true },
     { "source": "/anreise.html", "destination": "/de/#anreise", "permanent": true },
     { "source": "/preise.html", "destination": "/de/#preise", "permanent": true },
     { "source": "/geschichte.html", "destination": "/de/#geschichte", "permanent": true },

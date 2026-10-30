@@ -1,0 +1,64 @@
+---
+import { contact, type Locale } from '../data/site';
+import { legalContent, legalOwner, privacyAnchors } from '../data/legal';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const { imprint, privacy } = legalContent[lang];
+const rows = [
+  { label: imprint.labels.phone, value: contact.phoneLabel, href: contact.phoneHref },
+  { label: imprint.labels.email, value: contact.emailLabel, href: contact.emailHref },
+  { label: imprint.labels.vat, value: contact.vatId },
+  { label: imprint.labels.purpose, value: imprint.values.purpose },
+  { label: imprint.labels.authority, value: imprint.values.authority },
+  { label: imprint.labels.chamber, value: imprint.values.chamber },
+  { label: imprint.labels.law, value: imprint.values.law },
+];
+---
+
+<main class="legal">
+  <div class="shell legal__inner">
+    <section aria-labelledby="impressum-title">
+      <h1 id="impressum-title">{imprint.title}</h1>
+      <p class="legal__intro">{imprint.intro}</p>
+
+      <dl class="legal__facts">
+        <dt>{imprint.labels.owner}</dt>
+        <dd>
+          {legalOwner.name}<br />
+          {legalOwner.business}<br />
+          {legalOwner.street}<br />
+          {legalOwner.city}<br />
+          {legalOwner.country[lang]}
+        </dd>
+        {rows.map((row) => (
+          <>
+            <dt>{row.label}</dt>
+            <dd>{row.href ? <a href={row.href}>{row.value}</a> : row.value}</dd>
+          </>
+        ))}
+      </dl>
+
+      {imprint.blocks.map((block) => (
+        <>
+          <h2>{block.heading}</h2>
+          {block.paragraphs?.map((text) => <p>{text}</p>)}
+        </>
+      ))}
+    </section>
+
+    <section id={privacyAnchors[lang]} class="legal__privacy" aria-labelledby="privacy-title">
+      <h2 class="legal__title" id="privacy-title">{privacy.title}</h2>
+      <p class="legal__updated">{privacy.updated}</p>
+      {privacy.blocks.map((block) => (
+        <>
+          <h3>{block.heading}</h3>
+          {block.paragraphs?.map((text) => <p>{text}</p>)}
+        </>
+      ))}
+    </section>
+  </div>
+</main>

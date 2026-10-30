@@ -1,0 +1,46 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SubpageHeader from '../../components/SubpageHeader.astro';
+import LegalContent from '../../components/LegalContent.astro';
+import LinksContent from '../../components/LinksContent.astro';
+import { locales, type Locale } from '../../data/site';
+import { legalContent, legalSlugs } from '../../data/legal';
+import { linkSlugs, linksContent } from '../../data/links';
+
+type PageKind = 'legal' | 'links';
+const slugs: Record<PageKind, Record<Locale, string>> = { legal: legalSlugs, links: linkSlugs };
+
+export function getStaticPaths() {
+  const kinds = [
+    ['legal', legalSlugs],
+    ['links', linkSlugs],
+  ] as const;
+  return kinds.flatMap(([kind, slugMap]) =>
+    locales.map((lang) => ({ params: { lang, page: slugMap[lang] }, props: { kind } })),
+  );
+}
+
+const { kind } = Astro.props as { kind: PageKind };
+const lang = Astro.params.lang as Locale;
+const canonicalHost = 'https://www.elferhuette.at';
+const hrefFor = Object.fromEntries(locales.map((item) => [item, `/${item}/${slugs[kind][item]}/`])) as Record<Locale, string>;
+const canonicalUrl = `${canonicalHost}${hrefFor[lang]}`;
+const alternates = [
+  ...locales.map((item) => ({ hrefLang: item, href: `${canonicalHost}${hrefFor[item]}` })),
+  { hrefLang: 'x-default', href: `${canonicalHost}${hrefFor.de}` },
+];
+const meta = kind === 'legal' ? legalContent[lang].meta : linksContent[lang].meta;
+---
+
+<MainLayout
+  title={meta.title}
+  description={meta.description}
+  locale={lang}
+  canonicalUrl={canonicalUrl}
+  alternates={alternates}
+>
+  <SubpageHeader lang={lang} backLabel={legalContent[lang].back} hrefFor={hrefFor} />
+  {kind === 'legal' ? <LegalContent lang={lang} /> : <LinksContent lang={lang} />}
+  <SiteFooter lang={lang} />
+</MainLayout>
