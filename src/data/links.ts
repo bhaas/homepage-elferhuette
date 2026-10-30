@@ -59,6 +59,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       {
         title: 'Wetter & Sicherheit',
         links: [
+          { name: 'Webcam Elfer', description: 'Live-Bilder vom Elfer – wie ist das Wetter am Berg?', href: 'https://www.stubai.at/skigebiete/elferbahnen/elfer-live/webcam/' },
           { name: 'GeoSphere Austria', description: 'Wetterprognose und Warnungen für Tirol', href: 'https://www.geosphere.at/de' },
           { name: 'Lawinen.report', description: 'Lawinenlagebericht Tirol', href: 'https://lawinen.report/' },
           { name: 'Bergrettung Tirol', description: 'Sicherheit am Berg', href: 'https://bergrettung.tirol/' },
@@ -70,7 +71,6 @@ export const linksContent: Record<Locale, LinksContent> = {
           { name: 'Stubaital Tourismus', description: 'Urlaub, Veranstaltungen und Infos zum Stubaital', href: 'https://www.stubai.at/' },
           { name: 'Stubaier Gletscher', description: 'Skifahren bis in den Frühsommer', href: 'https://www.stubaier-gletscher.com/' },
           { name: 'alpenvereinaktiv.com', description: 'Wander- und Klettersteigtouren', href: 'https://www.alpenvereinaktiv.com/de/' },
-          { name: 'Österreichischer Alpenverein', description: 'Bergsport, Hütten und Sicherheit', href: 'https://www.alpenverein.at/' },
         ],
       },
     ],
@@ -111,6 +111,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       {
         title: 'Weather & safety',
         links: [
+          { name: 'Elfer webcam', description: 'Live images from the Elfer – check the weather on the mountain', href: 'https://www.stubai.at/en/skiing-resorts/elferbahnen/elfer-live/webcams/' },
           { name: 'GeoSphere Austria', description: 'Weather forecast and warnings for Tyrol', href: 'https://www.geosphere.at/en' },
           { name: 'Avalanche.report', description: 'Avalanche bulletin for Tyrol', href: 'https://avalanche.report/' },
           { name: 'Bergrettung Tirol', description: 'Tyrolean mountain rescue', href: 'https://bergrettung.tirol/' },
@@ -122,7 +123,6 @@ export const linksContent: Record<Locale, LinksContent> = {
           { name: 'Stubai Valley tourism', description: 'Holidays, events and information', href: 'https://www.stubai.at/en/' },
           { name: 'Stubai Glacier', description: 'Skiing until early summer', href: 'https://www.stubaier-gletscher.com/' },
           { name: 'alpenvereinaktiv.com', description: 'Hiking and via ferrata routes', href: 'https://www.alpenvereinaktiv.com/en/' },
-          { name: 'Austrian Alpine Club', description: 'Mountain sports, huts and safety', href: 'https://www.alpenverein.at/' },
         ],
       },
     ],
@@ -163,6 +163,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       {
         title: 'Meteo e sicurezza',
         links: [
+          { name: 'Webcam Elfer', description: 'Immagini in diretta dall’Elfer – che tempo fa in montagna?', href: 'https://www.stubai.at/it/webcam/' },
           { name: 'GeoSphere Austria', description: 'Previsioni meteo e allerte per il Tirolo', href: 'https://www.geosphere.at/en' },
           { name: 'Valanghe.report', description: 'Bollettino valanghe del Tirolo', href: 'https://valanghe.report/' },
           { name: 'Bergrettung Tirol', description: 'Soccorso alpino del Tirolo', href: 'https://bergrettung.tirol/' },
@@ -174,7 +175,6 @@ export const linksContent: Record<Locale, LinksContent> = {
           { name: 'Turismo Valle dello Stubai', description: 'Vacanze, eventi e informazioni', href: 'https://www.stubai.at/it/' },
           { name: 'Ghiacciaio dello Stubai', description: "Sci fino all'inizio dell'estate", href: 'https://www.stubaier-gletscher.com/' },
           { name: 'alpenvereinaktiv.com', description: 'Escursioni e vie ferrate', href: 'https://www.alpenvereinaktiv.com/it/' },
-          { name: 'Club Alpino Austriaco', description: 'Sport di montagna, rifugi e sicurezza', href: 'https://www.alpenverein.at/' },
         ],
       },
     ],
