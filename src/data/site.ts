@@ -11,6 +11,9 @@ import gallerySkiSlope from '../assets/elferhuette/gallery-ski-slope.jpg';
 import galleryHayBarn from '../assets/elferhuette/gallery-hay-barn.jpg';
 import galleryMilkCans from '../assets/elferhuette/gallery-milk-cans.jpg';
 import galleryNightLights from '../assets/elferhuette/gallery-night-lights.jpg';
+import galleryDuskHut from '../assets/elferhuette/gallery-dusk-hut.jpg';
+import galleryDuskPines from '../assets/elferhuette/gallery-dusk-pines.jpg';
+import galleryDuskForest from '../assets/elferhuette/gallery-dusk-forest.jpg';
 import gentians from '../assets/elferhuette/gentians.jpg';
 import history1933 from '../assets/elferhuette/history-1933.jpg';
 import history1967 from '../assets/elferhuette/history-1967.jpg';
@@ -53,6 +56,9 @@ export const images = {
   galleryHayBarn,
   galleryMilkCans,
   galleryNightLights,
+  galleryDuskHut,
+  galleryDuskPines,
+  galleryDuskForest,
   history1933,
   historyMules,
   history1967,
@@ -107,6 +113,11 @@ export const galleryItems: {
     caption: { de: 'Enzian am Wegesrand', en: 'Gentians along the trail', it: 'Genziane lungo il sentiero' },
   },
   {
+    imageKey: 'galleryDuskHut',
+    layout: 'feature',
+    caption: { de: 'Erster Schnee: die Elferhütte in der Dämmerung über dem Nebelmeer', en: 'First snow: Elferhütte at dusk above a sea of clouds', it: 'Prima neve: l’Elferhütte al crepuscolo sopra un mare di nuvole' },
+  },
+  {
     imageKey: 'gallerySnowyPeaks',
     layout: 'wide',
     position: 'center 92%',
@@ -129,6 +140,11 @@ export const galleryItems: {
     credit: { author: 'SchiDD', license: 'CC BY-SA 4.0', href: 'https://commons.wikimedia.org/wiki/File:Stubai-Elferh%C3%BCtte-4.jpg' },
   },
   {
+    imageKey: 'galleryDuskPines',
+    layout: 'wide',
+    caption: { de: 'Abendlicht über dem Wolkenmeer – tief unten die Elferhütte', en: 'Evening glow over the clouds – the hut far below', it: 'Luce della sera sopra le nuvole – in basso il rifugio' },
+  },
+  {
     imageKey: 'galleryMilkCans',
     layout: '',
     caption: { de: 'Milchkannen und Rodel auf der Terrasse', en: 'Milk churns and sledge on the terrace', it: 'Bidoni del latte e slittino sulla terrazza' },
@@ -147,6 +163,11 @@ export const galleryItems: {
     imageKey: 'galleryNightLights',
     layout: '',
     caption: { de: 'Lichter im Tal zur blauen Stunde', en: 'Valley lights at blue hour', it: 'Luci della valle all’ora blu' },
+  },
+  {
+    imageKey: 'galleryDuskForest',
+    layout: 'wide',
+    caption: { de: 'Blaue Stunde: das Stubaital unter einer Wolkendecke', en: 'Blue hour: the Stubai Valley beneath a blanket of cloud', it: 'Ora blu: la Valle dello Stubai sotto una coltre di nuvole' },
   },
   {
     imageKey: 'gallery1965',
