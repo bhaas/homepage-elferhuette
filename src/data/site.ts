@@ -14,6 +14,10 @@ import galleryNightLights from '../assets/elferhuette/gallery-night-lights.jpg';
 import galleryDuskHut from '../assets/elferhuette/gallery-dusk-hut.jpg';
 import galleryDuskPines from '../assets/elferhuette/gallery-dusk-pines.jpg';
 import galleryDuskForest from '../assets/elferhuette/gallery-dusk-forest.jpg';
+import galleryAutumnPath from '../assets/elferhuette/gallery-autumn-path.jpg';
+import galleryAutumnPanorama from '../assets/elferhuette/gallery-autumn-panorama.jpg';
+import galleryAutumnHutBelow from '../assets/elferhuette/gallery-autumn-hut-below.jpg';
+import galleryAutumnRidge from '../assets/elferhuette/gallery-autumn-ridge.jpg';
 import gentians from '../assets/elferhuette/gentians.jpg';
 import history1933 from '../assets/elferhuette/history-1933.jpg';
 import history1967 from '../assets/elferhuette/history-1967.jpg';
@@ -59,6 +63,10 @@ export const images = {
   galleryDuskHut,
   galleryDuskPines,
   galleryDuskForest,
+  galleryAutumnPath,
+  galleryAutumnPanorama,
+  galleryAutumnHutBelow,
+  galleryAutumnRidge,
   history1933,
   historyMules,
   history1967,
@@ -163,6 +171,26 @@ export const galleryItems: {
     imageKey: 'galleryNightLights',
     layout: '',
     caption: { de: 'Lichter im Tal zur blauen Stunde', en: 'Valley lights at blue hour', it: 'Luci della valle all’ora blu' },
+  },
+  {
+    imageKey: 'galleryAutumnPath',
+    layout: 'tall',
+    caption: { de: 'Goldene Lärchen und erster Schnee am Weg zur Elferhütte', en: 'Golden larches and first snow on the path to Elferhütte', it: 'Larici dorati e prima neve sul sentiero per l’Elferhütte' },
+  },
+  {
+    imageKey: 'galleryAutumnHutBelow',
+    layout: 'tall',
+    caption: { de: 'Tiefblick auf die Elferhütte und das herbstliche Stubaital', en: 'Looking down on Elferhütte and the autumn Stubai Valley', it: 'Vista dall’alto sull’Elferhütte e la Valle dello Stubai in autunno' },
+  },
+  {
+    imageKey: 'galleryAutumnPanorama',
+    layout: 'wide',
+    caption: { de: 'Herbstpanorama vom Elfer bis zur Nordkette bei Innsbruck', en: 'Autumn panorama from the Elfer to the Nordkette above Innsbruck', it: 'Panorama autunnale dall’Elfer fino alla Nordkette sopra Innsbruck' },
+  },
+  {
+    imageKey: 'galleryAutumnRidge',
+    layout: 'wide',
+    caption: { de: 'Verschneiter Grat über dem Stubaital', en: 'Snowy ridge above the Stubai Valley', it: 'Cresta innevata sopra la Valle dello Stubai' },
   },
   {
     imageKey: 'galleryDuskForest',
