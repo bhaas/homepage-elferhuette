@@ -68,6 +68,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       {
         title: 'Region & Touren',
         links: [
+          { name: 'Wikipedia: Elferhütte', description: 'Geschichte und Wissenswertes über die Elferhütte', href: 'https://de.wikipedia.org/wiki/Elferh%C3%BCtte' },
           { name: 'Stubaital Tourismus', description: 'Urlaub, Veranstaltungen und Infos zum Stubaital', href: 'https://www.stubai.at/' },
           { name: 'Stubaier Gletscher', description: 'Skifahren bis in den Frühsommer', href: 'https://www.stubaier-gletscher.com/' },
           { name: 'alpenvereinaktiv.com', description: 'Wander- und Klettersteigtouren', href: 'https://www.alpenvereinaktiv.com/de/' },
@@ -120,6 +121,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       {
         title: 'Region & routes',
         links: [
+          { name: 'Wikipedia: Elferhütte', description: 'History and facts about the Elferhütte (in German)', href: 'https://de.wikipedia.org/wiki/Elferh%C3%BCtte' },
           { name: 'Stubai Valley tourism', description: 'Holidays, events and information', href: 'https://www.stubai.at/en/' },
           { name: 'Stubai Glacier', description: 'Skiing until early summer', href: 'https://www.stubaier-gletscher.com/' },
           { name: 'alpenvereinaktiv.com', description: 'Hiking and via ferrata routes', href: 'https://www.alpenvereinaktiv.com/en/' },
@@ -172,6 +174,7 @@ export const linksContent: Record<Locale, LinksContent> = {
       {
         title: 'Regione ed escursioni',
         links: [
+          { name: 'Wikipedia: Elferhütte', description: 'Storia e curiosità sull’Elferhütte (in tedesco)', href: 'https://de.wikipedia.org/wiki/Elferh%C3%BCtte' },
           { name: 'Turismo Valle dello Stubai', description: 'Vacanze, eventi e informazioni', href: 'https://www.stubai.at/it/' },
           { name: 'Ghiacciaio dello Stubai', description: "Sci fino all'inizio dell'estate", href: 'https://www.stubaier-gletscher.com/' },
           { name: 'alpenvereinaktiv.com', description: 'Escursioni e vie ferrate', href: 'https://www.alpenvereinaktiv.com/it/' },
